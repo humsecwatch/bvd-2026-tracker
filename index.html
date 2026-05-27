@@ -3,14 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bundibugyo Ebola Outbreak — Daily Situational Picture</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>BVD outbreak watch · Day 12</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'&gt;&lt;circle cx='16' cy='16' r='14' fill='%23A32D2D'/&gt;&lt;circle cx='16' cy='16' r='14' fill='none' stroke='%23501313' stroke-width='1.5'/&gt;&lt;text x='16' y='22' font-family='Arial,sans-serif' font-size='18' font-weight='700' text-anchor='middle' fill='white'&gt;B&lt;/text&gt;&lt;/svg&gt;">
+
+  <meta name="description" content="Open-source daily situational picture of the 2026 Bundibugyo Ebola virus outbreak in DRC and Uganda. Case figures, country posture, news and context.">
+  <meta name="keywords" content="Ebola, Bundibugyo, BVD, DRC, Uganda, PHEIC, outbreak, situational, humanitarian">
+
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BVD outbreak watch">
+  <meta property="og:title" content="BVD outbreak watch — Daily situational picture">
+  <meta property="og:description" content="Open-source daily situational picture of the 2026 Bundibugyo Ebola outbreak in DRC and Uganda. Case figures, country posture, news and context. Updated daily.">
+  <meta property="og:locale" content="en_GB">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="BVD outbreak watch — Daily situational picture">
+  <meta name="twitter:description" content="Open-source daily situational picture of the 2026 Bundibugyo Ebola outbreak in DRC and Uganda.">
+  <!-- Tailwind not loaded: this page uses only inline custom classes; the CDN was unused. -->
   <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <style>
     body { margin: 0; background: #faf9f6; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; }
     #root { display: block; }
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+    }
+    *:focus-visible {
+      outline: 2px solid #0A6EB4;
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
   </style>
 </head>
 <body>
@@ -52,7 +77,49 @@ const TIER_LEGEND = [
 ];
 
 const data = {
-  date_display: "27 May 2026, 09:00 CEST",
+  date_display: "27 May 2026, 07:00 Rome / Berlin / Paris time",
+  date_iso: "2026-05-27",
+  timeline: {
+    title: "Outbreak timeline",
+    events: [
+      { d: "24 Apr", t: "First symptoms reported in Mongbwalu Health Zone, Ituri", kind: "amber" },
+      { d: "5 May",  t: "DRC MoH alerts WHO of unknown illness with high mortality (4 health-worker deaths)", kind: "amber" },
+      { d: "13 May", t: "Rapid response team confirms Bundibugyo strain via INRB lab", kind: "amber" },
+      { d: "15 May", t: "DRC officially declares outbreak; Uganda confirms first imported cases", kind: "navy" },
+      { d: "16 May", t: "WHO Director-General determines outbreak constitutes a PHEIC", kind: "red" },
+      { d: "17 May", t: "Rwanda closes all land borders with DRC", kind: "red" },
+      { d: "18 May", t: "Africa CDC declares PHECS; US activates Title 42 entry restrictions", kind: "red" },
+      { d: "22 May", t: "WHO IHR Emergency Committee meets; temporary recommendations issued", kind: "navy" },
+      { d: "22–23 May", t: "Cross-border ministerial meeting in Kampala (DRC, Uganda, South Sudan)", kind: "navy" },
+      { d: "25 May", t: "WHO DG: outbreak 'outpacing us'; Italy near-miss admissions (Como aid workers)", kind: "red" },
+      { d: "26 May", t: "DG Tedros travels to DRC; Oxford/SII confirm vaccine trials possible in 2–3 months", kind: "navy" },
+      { d: "Today",  t: "27 May 2026 — situational picture as published", kind: "live" },
+    ],
+    modal: { title: "Outbreak timeline — full chronology",
+      body: "24 Apr — First symptoms reported in Mongbwalu Health Zone, Ituri, DRC (identified retrospectively).\n5 May — DRC MoH alerts WHO of cluster of unknown high-mortality illness including four health-worker deaths.\n13 May — Rapid response team in Mongbwalu and Rwampara health zones confirms Bundibugyo strain via INRB lab (Kinshasa).\n15 May — DRC's Ministry of Public Health officially declares outbreak; Uganda confirms first two imported cases in Kampala.\n16 May — WHO Director-General Tedros, after consultation with affected State Parties, determines the event constitutes a Public Health Emergency of International Concern (PHEIC).\n17 May — Rwanda closes all land border crossings with DRC.\n18 May — Africa CDC declares the outbreak a Public Health Emergency of Continental Security (PHECS); US CDC activates Title 42 entry restrictions on DRC/Uganda/South Sudan.\n19 May — US doctor (Stafford) evacuated to Berlin Charité; Bahrain and Jordan announce entry suspensions.\n22 May — WHO IHR Emergency Committee meets; PHEIC confirmed; temporary recommendations issued. ECDC publishes Threat Assessment Brief.\n22-23 May — High-Level Ministerial Meeting in Kampala (DRC, Uganda, South Sudan + Africa CDC + WHO + UNICEF + partners) — regional solidarity framework adopted.\n23 May — Uganda Airlines suspends all Kinshasa flights; Uganda case count rises from 2 to 5.\n24 May — US extends Title 42 to LPRs (HHS 42 CFR 71.40 revision); India MoHFW issues formal travel advisory.\n25 May — WHO DG to AU briefing: outbreak 'outpacing us'. Italy: two suspected cases admitted to Sacco Milan (later negative). Uganda climbs to 7 confirmed.\n26 May — DG Tedros travels to DRC with Chikwe Ihekweazu; Oxford/SII confirm Bundibugyo vaccine trials possible in 2-3 months; US POE-routing extends to Houston (IAH).\n27 May — TODAY. Situational picture as published.",
+      sources: [{label:"WHO DON603", url:"https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON602"},{label:"Wikipedia: 2026 Ituri epidemic", url:"https://en.wikipedia.org/wiki/2026_Ituri_Province_Ebola_epidemic"}]
+    }
+  },
+  map: {
+    title: "Affected and at-risk geography",
+    modal: { title: "Geographic spread — affected and at-risk countries",
+      body: "AFFECTED (confirmed transmission):\n• DRC — Ituri, Nord-Kivu, Sud-Kivu provinces (11 health zones)\n• Uganda — Kampala cluster\n\nAT ESPECIALLY HIGH RISK (per WHO 25 May):\n• South Sudan, Rwanda, Burundi, Tanzania, Kenya, Central African Republic, Republic of the Congo, Angola, Zambia, Ethiopia\n\nKey concern: the Ituri-Nord Kivu epicentre sits at the intersection of porous borders with Uganda (north-east), Rwanda (south-east), Burundi (south), and South Sudan (north). Trade and mining corridors carry significant population movement; the M23 occupation of Goma has displaced normal cross-border controls.",
+      sources: [{label:"WHO Disease Outbreak News", url:"https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON602"},{label:"WHO AFRO ministerial meeting", url:"https://www.afro.who.int/news/high-level-ministerial-meeting-cross-border-coordination-ebola-disease-outbreak-caused"}]
+    }
+  },
+  sparkline: {
+    label: "DRC suspected cases — past 12 days",
+    series: [
+      {d:"15 May", v:6},  {d:"16 May", v:12},  {d:"17 May", v:41},
+      {d:"18 May", v:80}, {d:"19 May", v:134}, {d:"20 May", v:215},
+      {d:"21 May", v:322}, {d:"22 May", v:462}, {d:"23 May", v:590},
+      {d:"24 May", v:712}, {d:"25 May", v:850}, {d:"26 May", v:906},
+      {d:"27 May", v:906},
+    ],
+    modal: { title: "DRC suspected case curve — 15 to 27 May",
+      body: "Cumulative suspected-case counts in DRC since lab confirmation of Bundibugyo virus on 15 May 2026. Note the sharp acceleration through 19–22 May (the period during which WHO declared PHEIC and DG Tedros described the trajectory as 'outpacing us'), followed by a plateau in the 25–27 May window.\n\nIMPORTANT CAVEATS: (1) These are SUSPECTED cases — only ~12% are lab-confirmed (105 of 906 as of 27 May). (2) Numbers reflect cumulative reports to WHO/DRC MoH; some retrospective re-classification has occurred (some suspected cases later ruled out, others added on review). (3) The flat 26→27 May reading reflects reporting lag, not necessarily a real plateau — re-check in 24–48 hours.\n\nData reconstructed from WHO DON603, CDC Current Situation, and Africa CDC bulletins. Daily updates to follow.",
+      sources: [{label:"WHO DON603", url:"https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON602"},{label:"US CDC Current Situation", url:"https://www.cdc.gov/ebola/situation-summary/index.html"},{label:"Wikipedia composite tracker", url:"https://en.wikipedia.org/wiki/2026_Ituri_Province_Ebola_epidemic"}] }
+  },
   stats: [
     { id: "drc_cases", value: "906 / 105", label: "DRC susp / conf", delta: "no change vs 26 May", warn: false,
       modal: { title: "DRC case count — 25 May",
@@ -82,6 +149,18 @@ const data = {
       modal: { title: "WHO risk grading: Regional", body: "Regional risk = High. WHO flagged 10 more African countries 'at especially high risk' of importation. Watch list: South Sudan, Burundi, Tanzania, Kenya, CAR, Rwanda, Angola, Zambia, Republic of Congo, Central African neighbours.", sources:[{label:"WHO DG Ministerial Briefing 25 May", url:"https://www.who.int/news-room/speeches/item/who-director-general-s-remarks-at-the-virtual-ministerial-briefing-on-the-bundibugyo-ebola-outbreak-25-may-2026"}] } },
     global: { label: "Low — global", color: "l",
       modal: { title: "WHO risk grading: Global", body: "Global risk = Low. ECDC assesses EU/EEA risk as 'very low'. Italy near-miss (Como aid workers, negative) is consistent with that grading. No bloc-wide measures from EU, AU or GCC.", sources:[{label:"ECDC TAB", url:"https://www.ecdc.europa.eu/en/publications-data/threat-assessment-brief-ebola-disease-outbreak-caused-bundibugyo-virus-democratic"}] } },
+  },
+  what_changed: {
+    title: "What changed in the last 24 hours",
+    items: [
+      "WHO–Africa CDC joint Incident Management Support Team operational (announced 26 May)",
+      "Oxford / Serum Institute confirm Bundibugyo vaccine could enter trials in 2–3 months",
+      "US POE-routing rule extended to Houston Bush (IAH) effective 23:59 last night",
+      "ECDC outbreak page updated with latest case figures (26 May)",
+    ],
+    modal: { title: "Operational delta — 27 May 2026",
+      body: "Material changes since the 26 May update:\n\n(1) WHO and Africa CDC established a joint Incident Management Support Team for the response; multi-agency Strategic Preparedness and Response Plan being finalised, aligned with DRC and Uganda national plans.\n\n(2) Oxford Vaccine Group (Prof. Teresa Lambe) and Serum Institute of India confirmed the ChAdOx1 BDBV candidate could enter clinical trials within 2–3 months — same viral-vector platform as the Oxford/AstraZeneca COVID-19 vaccine.\n\n(3) Houston Intercontinental (IAH) joined Washington Dulles (IAD) and Atlanta (ATL) as designated US ports of entry for all DRC/Uganda/South Sudan-transit passengers (US citizens, LPRs, and foreign nationals).\n\n(4) ECDC outbreak page refreshed with latest DRC/Uganda case figures and EU member-state preparedness updates.\n\nNo material change in case totals or risk grading since the 26 May cut.",
+      sources: [{label:"WHO", url:"https://www.who.int/emergencies/disease-outbreak-news"},{label:"The Week: Oxford/SII vaccine", url:"https://www.theweek.in/news/health/2026/05/26/oxford-and-serum-institutes-ebola-vaccine-could-enter-trials-in-2-3-months.html"},{label:"ECDC", url:"https://www.ecdc.europa.eu/en/ebola-virus-disease-outbreak-democratic-republic-congo-and-uganda"}] }
   },
   critical_alert: {
     title: "Outbreak headline — Bundibugyo virus, no licensed vaccine",
@@ -141,7 +220,7 @@ const data = {
   ],
   things_aware: [
     { text:"DRC's 17th Ebola outbreak since 1976 — only 5 months after the previous one ended.",
-      modal:{title:"DRC and Ebola — the recurrence pattern", body:"This is DRC's 17th recorded Ebola outbreak since the virus was first identified there in 1976. The previous outbreak (Zaire strain, smaller-scale) ended only 5 months ago. The Equatorial rainforest belt of north-eastern DRC sits at the intersection of three drivers — wildlife reservoirs (fruit bats), high human-bushmeat contact, and weak rural health infrastructure — which makes recurrence near-inevitable.\n\nWhat is different this time: the Bundibugyo strain, the speed of cross-border spread to Uganda, and the conflict overlay (active M23 and ADF operations in Nord-Kivu / Ituri) which has historically taken 6-12 months off response timelines.", sources:[{label:"CNN: DRC's repeat outbreaks", url:"https://www.cnn.com/2026/05/26/health/ebola-outbreak-vaccines-treatments"},{label:"Wikipedia: 2026 Ituri epidemic", url:"https://en.wikipedia.org/wiki/2026_Ituri_Province_Ebola_epidemic"}]} },
+      modal:{title:"DRC and Ebola — the recurrence pattern", body:"This is DRC's 17th recorded Ebola outbreak since the virus was first identified there in 1976. The previous outbreak (Zaire strain, smaller-scale) ended only 5 months ago.\n\n― BUNDIBUGYO STRAIN — PRIOR vs CURRENT ―\n\n2007 Uganda (Bundibugyo District, first identification)\n   149 cases · 37 deaths · CFR 25%\n\n2012 DRC (Province Orientale)\n   59 cases · 34 deaths · CFR 58%\n\n2026 DRC + Uganda (CURRENT, as of 27 May)\n   906 suspected, 105 confirmed · 233 deaths · still rising\n\nThe current outbreak is already 6× larger by case count than the 2007 Bundibugyo outbreak — and 15× larger than 2012. CFR is too early to calculate cleanly because most cases are recent and unresolved.\n\nThe Equatorial rainforest belt of north-eastern DRC sits at the intersection of three drivers — wildlife reservoirs (fruit bats), high human-bushmeat contact, and weak rural health infrastructure — which makes recurrence near-inevitable. What is different this time: the Bundibugyo strain (rare and under-studied), the speed of cross-border spread to Uganda, and the conflict overlay (active M23 and ADF operations in Nord-Kivu / Ituri) which has historically taken 6–12 months off response timelines.", sources:[{label:"CNN: DRC's repeat outbreaks", url:"https://www.cnn.com/2026/05/26/health/ebola-outbreak-vaccines-treatments"},{label:"Wikipedia: 2026 Ituri epidemic", url:"https://en.wikipedia.org/wiki/2026_Ituri_Province_Ebola_epidemic"},{label:"Gavi: what we know about Bundibugyo", url:"https://www.gavi.org/vaccineswork/bundibugyo-rare-virus-causing-deadly-new-ebola-outbreak-drc-has-no-vaccine-yet"}]} },
     { text:"Oxford / Serum Institute vaccine could enter clinical trials within 2-3 months.",
       modal:{title:"Vaccine pipeline — ChAdOx1 BDBV", body:"University of Oxford and Serum Institute of India (SIIPL) are accelerating an experimental Bundibugyo-specific vaccine candidate (ChAdOx1 BDBV). It uses the same ChAdOx viral-vector platform that underpinned the Oxford/AstraZeneca COVID-19 vaccine. Professor Teresa Lambe (Oxford Vaccine Group) said trials could begin in 2-3 months.\n\nNo deployment timeline yet. The European Commission has committed €7.4M to WHO for an accelerated R&D blueprint covering trial design and roll-out logistics. WHO is in active discussions about which vaccine candidates can be tested under emergency clinical-trial protocols — a model used in the 2014-16 West Africa outbreak.", sources:[{label:"The Week: Oxford/SII vaccine trials", url:"https://www.theweek.in/news/health/2026/05/26/oxford-and-serum-institutes-ebola-vaccine-could-enter-trials-in-2-3-months.html"},{label:"European Commission", url:"https://health.ec.europa.eu/health-security-and-infectious-diseases/crisis-management/ebola-virus-outbreak-2026_en"}]} },
     { text:"Outbreak went undetected for ~3 weeks because initial tests targeted the wrong strain.",
@@ -164,6 +243,32 @@ const data = {
       modal:{title:"Sector funding context", body:"WFP statement 21 May (updated 22 May): mobilising responders and supplies, keeping air access open via UNHAS, providing food and nutrition support. WFP Country Director David Stevenson framed the situation as a \"race against time\" against the 26.5M acutely food-insecure caseload in DRC.\n\nFunding requirement: USD 214M overall in DRC; USD 10M specifically for Ebola response. Indicative of sector-wide resource pressure.", sources:[{label:"WFP", url:"https://www.wfp.org/stories/eastern-drc-ebola-outbreak-threatens-deepen-hunger-wfp-ramps-emergency-support"}]} },
   ],
   full_tracker_url: "#",
+faq: {
+    title: "FAQ — for the worried",
+    items: [
+      { q: "Is Ebola airborne?",
+        a: "No. Ebola spreads through DIRECT CONTACT with bodily fluids (blood, vomit, diarrhoea, saliva, semen, sweat) of an infected person who is showing symptoms — or with surfaces and materials freshly contaminated by those fluids. It does NOT spread through casual contact, sharing a room, breathing the same air, or through food and water." },
+      { q: "Should I cancel my upcoming travel?",
+        a: "Depends entirely on destination. The WHO is NOT advising against travel internationally — only specific countries (US, Bahrain, Jordan) have imposed entry restrictions on travellers from DRC/Uganda/South Sudan. For most destinations including Kenya, Tanzania, Ethiopia, Europe and the Middle East, normal travel continues. Always check your destination country's foreign ministry advisory in the 24 hours before flying." },
+      { q: "How does this compare to the 2014 West Africa outbreak?",
+        a: "Different strain (Bundibugyo here vs Zaire then), much smaller so far (under 1,000 suspected vs 28,000+ in West Africa), but the lack of a licensed Bundibugyo vaccine is a meaningful disadvantage compared to 2014–16 when Ervebo was developed mid-outbreak. The current geographic concentration in north-east DRC is also more contained than the multi-country spread of 2014." },
+      { q: "Why is the case-fatality rate so high (30–50%)?",
+        a: "Ebola disease, broadly, is severe — but case-fatality is partly a function of healthcare access. Patients reaching well-equipped treatment centres within 24 hours have substantially better outcomes (supportive care including fluids, blood-pressure stabilisation, and treatment of co-infections matters enormously). In remote conflict-affected zones with weak health infrastructure — like Ituri now — CFR runs higher because patients arrive later and centres are overwhelmed." },
+      { q: "Will Europe / North America / Asia see imported cases?",
+        a: "Statistically, yes — large outbreaks usually produce a small number of imported cases via travellers (humanitarian workers, medical staff, business travellers). The 2014–16 outbreak saw a handful of imported cases in Europe and the US, mostly healthcare workers being medevaced. Onward transmission in those countries is unusual because of robust healthcare-system response. The Italy near-miss on 25 May was the first suspected European cases of this outbreak (both negative)." },
+      { q: "Is there a vaccine?",
+        a: "Not yet for the Bundibugyo strain. Two licensed Ebola vaccines (Ervebo / rVSV-ZEBOV and the Janssen two-dose regimen) target the Zaire strain — animal studies suggest only partial cross-protection. The Oxford Vaccine Group and Serum Institute of India announced on 26 May that a Bundibugyo-specific vaccine candidate (ChAdOx1 BDBV) could enter trials in 2–3 months. No emergency deployment timeline yet." },
+    ],
+    modal: { title: "FAQ — extended",
+      body: "Full Q&A is shown on the page. For deeper context, the linked sources below from MSF, Gavi, Imperial College London and CDC offer the most accessible technical explainers.",
+      sources: [{label:"MSF: Bundibugyo virus challenge", url:"https://www.msf.org/bundibugyo-virus-challenge-why-ebola-disease-outbreak-different"},{label:"Gavi: what we know about Bundibugyo", url:"https://www.gavi.org/vaccineswork/bundibugyo-rare-virus-causing-deadly-new-ebola-outbreak-drc-has-no-vaccine-yet"},{label:"Imperial College London Q&A", url:"https://www.imperial.ac.uk/news/articles/2026/ebola-outbreak-2026-qa-with-experts/"},{label:"CDC: How Ebola spreads", url:"https://www.cdc.gov/ebola/about/transmission.html"}]
+    }
+  },
+  about_page: {
+    title: "About this page — methodology, sources, and limits",
+    body: "WHAT THIS IS:\nAn open-source daily situational picture of the 2026 Bundibugyo Ebola virus outbreak in DRC and Uganda. Designed for humanitarian workers, researchers, and the interested public who need a one-page reference with links out to authoritative primary sources.\n\nUPDATE CADENCE:\nUpdated roughly daily during the active PHEIC period (declared 17 May 2026; in force until WHO IHR Emergency Committee determines otherwise — next review expected mid-June). Update timestamp is at the top of the page.\n\nSOURCE PRIORITY ORDER:\n(1) WHO Disease Outbreak News and DG statements (highest authority for case figures and risk grading)\n(2) National Ministries of Health — DRC INRB / Uganda MoH (for in-country detail)\n(3) US CDC \"Current Situation\" page and Africa CDC bulletins (for cross-referencing and US-specific policy)\n(4) ECDC outbreak page and Threat Assessment Briefs (for EU/EEA risk and policy)\n(5) Reputable news outlets — Reuters, AFP, Al Jazeera, BBC, CNN, Euronews, The Week — for material outside official channels (incidents, quotes, ground reporting)\n(6) Specialist sources — MSF medical commentary, Gavi explainers, Imperial College London expert Q&As — for technical context\nFigures may lag actual reality by 24–72 hours; reporting timing varies by source.\n\nWHAT THIS IS NOT:\nNot officially affiliated with any UN agency, government, humanitarian organisation, or news outlet. Provided for situational awareness only — not a substitute for official advisories from your organisation, employer, or relevant authorities. Always verify operational decisions against the primary sources linked inline in each entry.\n\nLIMITS:\nThis is a compilation, not original reporting. The author has no privileged access to non-public information. Case-count caveats apply throughout — suspected cases may be revised up or down on later review. The Bundibugyo strain is under-studied; historical case-fatality estimates (30–50%) come from only two prior outbreaks and may not predict this one.\n\nSUNSET:\nThis page will continue publishing as long as the PHEIC is active. If WHO terminates the PHEIC and the outbreak is declared over, the final entry will be a retrospective summary and the page will then become a historical reference.",
+    sources: [{label:"GitHub repository", url:"#"},{label:"WHO Disease Outbreak News", url:"https://www.who.int/emergencies/disease-outbreak-news"},{label:"US CDC Current Situation", url:"https://www.cdc.gov/ebola/situation-summary/index.html"}]
+  },
 };
 
 const SOURCES_FOOTER = [
@@ -295,16 +400,40 @@ function EbolaDashboard() {
           .grid-risk { grid-template-columns: 1fr; }
           .hdr-row { flex-direction: column; align-items: flex-start !important; gap: 6px; }
         }
+        @media (max-width: 480px) {
+          .grid-chips { grid-template-columns: repeat(3, 1fr); gap: 4px; }
+        }
+        @media (max-width: 360px) {
+          .grid-stats { grid-template-columns: 1fr; }
+          .grid-chips { grid-template-columns: repeat(2, 1fr); gap: 4px; }
+          body { padding: 0; }
+        }
+        @media (max-width: 540px) {
+          /* Tighter padding inside the main card on small screens */
+          main > div > div { padding-left: 12px !important; padding-right: 12px !important; }
+        }
       `}</style>
 
-      <div style={{ maxWidth: 820, margin: "0 auto", background: "#fff", borderRadius: 12, border: `0.5px solid ${BORDER}`, overflow: "hidden" }}>
+      <main style={{ maxWidth: 820, margin: "0 auto", background: "#fff", borderRadius: 12, border: `0.5px solid ${BORDER}`, overflow: "hidden" }} aria-label="Bundibugyo Ebola outbreak situational dashboard">
+        <h1 className="sr-only">Bundibugyo Ebola outbreak — daily situational picture, 27 May 2026</h1>
         {/* Header */}
         <div style={{ background: NAVY, color: "#fff", padding: "14px 18px" }}>
           <div className="hdr-row" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 10 }}>
             <div>
               <div style={{ fontSize: 17, fontWeight: 700, letterSpacing: 0.2 }}>Ebola PHEIC — daily situational picture</div>
               <div style={{ fontSize: 11.5, opacity: 0.85, marginTop: 3 }}>
-                Bundibugyo virus · DRC + Uganda · {data.date_display}
+                Bundibugyo virus · DRC + Uganda
+              </div>
+              <div style={{ fontSize: 12.5, fontWeight: 700, marginTop: 6, color: "#fff", letterSpacing: 0.2 }}>
+                Last updated: {data.date_display}
+              </div>
+              <div style={{ fontSize: 11, opacity: 0.75, marginTop: 3, color: "#fff" }}>
+                {(() => {
+                  const start = new Date("2026-05-15T00:00:00Z");
+                  const today = new Date(data.date_iso || "2026-05-27");
+                  const days = Math.max(0, Math.floor((today - start) / 86400000));
+                  return `Day ${days} since lab confirmation (15 May 2026) · Day ${days + 21} since first reported symptoms (24 April 2026)`;
+                })()}
               </div>
             </div>
             <div style={{
@@ -343,6 +472,150 @@ function EbolaDashboard() {
             ))}
           </div>
 
+          {/* Timeline strip */}
+          <Tile id="timeline" hover={hover} setHover={setHover}
+            onClick={() => openModal(data.timeline.modal)}
+            role="region" aria-label="Outbreak timeline, click for full chronology"
+            style={{
+              marginBottom: 12, padding: "10px 14px", borderRadius: 8,
+              background: "#fff", border: `0.5px solid ${BORDER}`,
+            }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 8 }}>
+              <div style={{ fontSize: 11, fontWeight: 700, color: NAVY, textTransform: "uppercase", letterSpacing: 0.4 }}>
+                {data.timeline.title}
+              </div>
+              <div style={{ fontSize: 10, color: "#888" }}>click for full chronology ↗</div>
+            </div>
+            <div style={{ display: "flex", overflowX: "auto", gap: 8, paddingBottom: 4 }}>
+              {data.timeline.events.map((e, i) => {
+                const kindColor = e.kind === "red" ? "#A32D2D"
+                  : e.kind === "navy" ? NAVY
+                  : e.kind === "live" ? "#3B6D11"
+                  : "#B5660A";
+                return (
+                  <div key={i} style={{
+                    flex: "0 0 auto", minWidth: 110, maxWidth: 130,
+                    padding: "5px 7px", borderLeft: `2px solid ${kindColor}`,
+                    background: "#FAFAFA", borderRadius: "0 4px 4px 0",
+                  }}>
+                    <div style={{ fontSize: 10, fontWeight: 700, color: kindColor }}>{e.d}</div>
+                    <div style={{ fontSize: 10, color: "#333", lineHeight: 1.3, marginTop: 2 }}>{e.t}</div>
+                  </div>
+                );
+              })}
+            </div>
+          </Tile>
+
+          {/* Sparkline */}
+          <Tile id="sparkline" hover={hover} setHover={setHover}
+            onClick={() => openModal(data.sparkline.modal)}
+            role="region" aria-label="DRC suspected case curve, click for caveats"
+            style={{
+              marginTop: 10, marginBottom: 12, padding: "10px 14px", borderRadius: 8,
+              background: "#fff", border: `0.5px solid ${BORDER}`,
+            }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 6 }}>
+              <div style={{ fontSize: 11, fontWeight: 700, color: NAVY, textTransform: "uppercase", letterSpacing: 0.4 }}>
+                {data.sparkline.label}
+              </div>
+              <div style={{ fontSize: 10, color: "#888" }}>click for caveats ↗</div>
+            </div>
+            {(() => {
+              const w = 760, h = 60, pad = 4;
+              const s = data.sparkline.series;
+              const max = Math.max(...s.map(p=>p.v));
+              const min = Math.min(...s.map(p=>p.v));
+              const xs = (i) => pad + i * ((w - 2*pad) / (s.length - 1));
+              const ys = (v) => h - pad - ((v - min) / Math.max(1, (max - min))) * (h - 2*pad);
+              const pts = s.map((p,i) => `${xs(i).toFixed(1)},${ys(p.v).toFixed(1)}`).join(" ");
+              const area = `M${xs(0).toFixed(1)},${h-pad} L${pts} L${xs(s.length-1).toFixed(1)},${h-pad} Z`;
+              return (
+                <svg viewBox={`0 0 ${w} ${h}`} width="100%" height={h} preserveAspectRatio="none" style={{display:"block"}}>
+                  <path d={area} fill={BLUE} fillOpacity="0.12" />
+                  <polyline points={pts} fill="none" stroke={BLUE} strokeWidth="1.8" />
+                  {s.map((p,i) => (
+                    <circle key={i} cx={xs(i)} cy={ys(p.v)} r={i === s.length-1 ? 3 : 1.6}
+                      fill={i === s.length-1 ? DANGER : BLUE} />
+                  ))}
+                </svg>
+              );
+            })()}
+            <div style={{ display: "flex", justifyContent: "space-between", marginTop: 4, fontSize: 9.5, color: "#888" }}>
+              <span>{data.sparkline.series[0].d} · {data.sparkline.series[0].v}</span>
+              <span>{data.sparkline.series[data.sparkline.series.length-1].d} · <b style={{color:DANGER}}>{data.sparkline.series[data.sparkline.series.length-1].v}</b></span>
+            </div>
+          </Tile>
+
+          {/* Geographic map */}
+          <Tile id="map" hover={hover} setHover={setHover}
+            onClick={() => openModal(data.map.modal)}
+            role="region" aria-label="Schematic map of affected and at-risk countries in East Africa, click for legend and detail"
+            style={{
+              marginBottom: 12, padding: "10px 14px", borderRadius: 8,
+              background: "#fff", border: `0.5px solid ${BORDER}`,
+            }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 6 }}>
+              <div style={{ fontSize: 11, fontWeight: 700, color: NAVY, textTransform: "uppercase", letterSpacing: 0.4 }}>
+                {data.map.title}
+              </div>
+              <div style={{ fontSize: 10, color: "#888" }}>click for legend & detail ↗</div>
+            </div>
+            <svg viewBox="0 0 360 240" width="100%" style={{display:"block", maxHeight:200}}>
+              <rect x="0" y="0" width="360" height="240" fill="#F4F1E8" />
+              <g fontFamily="-apple-system, sans-serif" fontSize="8" fill="#3a3a3a">
+                <polygon points="20,150 70,80 130,75 175,105 165,175 105,200 30,195" fill="#F7C1C1" stroke="#A32D2D" strokeWidth="0.8" />
+                <text x="80" y="145" fontWeight="700" fill="#501313">DRC</text>
+                <text x="65" y="158" fontSize="7" fill="#501313">Ituri · N-Kivu · S-Kivu</text>
+                <polygon points="175,105 220,95 230,130 195,150 165,150" fill="#F5C4B3" stroke="#4A1B0C" strokeWidth="0.8" />
+                <text x="187" y="125" fontWeight="700" fill="#4A1B0C">UGANDA</text>
+                <text x="187" y="138" fontSize="7" fill="#4A1B0C">Kampala</text>
+                <polygon points="175,150 200,150 195,175 165,175" fill="#F5C4B3" stroke="#4A1B0C" strokeWidth="0.8" />
+                <text x="173" y="167" fontWeight="700" fill="#4A1B0C">RW</text>
+                <polygon points="165,175 195,175 195,200 165,200" fill="#FAC775" stroke="#412402" strokeWidth="0.6" />
+                <text x="172" y="190" fontWeight="700" fill="#412402">BI</text>
+                <polygon points="195,150 240,130 250,165 220,180 195,175" fill="#FAC775" stroke="#412402" strokeWidth="0.6" />
+                <text x="215" y="158" fontWeight="700" fill="#412402">TZ</text>
+                <text x="215" y="170" fontSize="7" fill="#412402">Tanzania</text>
+                <polygon points="195,200 250,200 250,230 200,230" fill="#FAC775" stroke="#412402" strokeWidth="0.6" />
+                <text x="215" y="218" fontWeight="700" fill="#412402">Zambia</text>
+                <polygon points="155,75 195,55 220,95 175,105 130,75" fill="#FAC775" stroke="#412402" strokeWidth="0.6" />
+                <text x="170" y="80" fontWeight="700" fill="#412402">South Sudan</text>
+                <polygon points="220,95 265,75 290,110 240,130" fill="#FAC775" stroke="#412402" strokeWidth="0.6" />
+                <text x="247" y="100" fontWeight="700" fill="#412402">Kenya</text>
+                <polygon points="20,195 105,200 60,225" fill="#FAC775" stroke="#412402" strokeWidth="0.6" />
+                <text x="50" y="215" fontWeight="700" fill="#412402">Angola</text>
+                <polygon points="105,75 155,75 130,40 75,40" fill="#FAC775" stroke="#412402" strokeWidth="0.6" />
+                <text x="105" y="60" fontWeight="700" fill="#412402">CAR</text>
+                <polygon points="220,40 290,30 295,75 265,75 220,95 200,55" fill="#FAC775" stroke="#412402" strokeWidth="0.6" />
+                <text x="245" y="55" fontWeight="700" fill="#412402">Ethiopia</text>
+                <polygon points="290,30 340,20 345,80 295,75" fill="#F1EFE8" stroke="#888" strokeWidth="0.4" />
+                <text x="310" y="50" fontWeight="500" fill="#888" fontSize="7">Sudan</text>
+                <polygon points="290,110 340,90 350,170 290,170 280,140" fill="#F1EFE8" stroke="#888" strokeWidth="0.4" />
+                <text x="312" y="135" fontWeight="500" fill="#888" fontSize="7">Somalia</text>
+                <polygon points="290,170 350,170 350,230 295,230" fill="#F1EFE8" stroke="#888" strokeWidth="0.4" />
+                <text x="312" y="205" fontWeight="500" fill="#888" fontSize="7">Mozam.</text>
+                <circle cx="105" cy="120" r="3" fill="#A32D2D" />
+                <text x="112" y="123" fontSize="7" fontWeight="700" fill="#A32D2D">Bunia (Ituri)</text>
+                <circle cx="155" cy="155" r="3" fill="#A32D2D" />
+                <text x="118" y="170" fontSize="7" fontWeight="700" fill="#A32D2D">Goma (N-Kivu)</text>
+                <circle cx="195" cy="128" r="2.5" fill="#D84315" />
+                <text x="200" y="119" fontSize="7" fontWeight="700" fill="#D84315">Kampala</text>
+              </g>
+              <g fontSize="7" fill="#444">
+                <rect x="6" y="6" width="100" height="56" fill="#fff" fillOpacity="0.92" stroke="#888" strokeWidth="0.3" rx="3" />
+                <rect x="10" y="11" width="8" height="5" fill="#F7C1C1" stroke="#A32D2D" strokeWidth="0.5" />
+                <text x="22" y="15.5" fontWeight="700">Affected (DRC)</text>
+                <rect x="10" y="20" width="8" height="5" fill="#F5C4B3" stroke="#4A1B0C" strokeWidth="0.5" />
+                <text x="22" y="24.5" fontWeight="700">Affected · border</text>
+                <rect x="10" y="29" width="8" height="5" fill="#FAC775" stroke="#412402" strokeWidth="0.5" />
+                <text x="22" y="33.5" fontWeight="700">At especially high risk</text>
+                <circle cx="14" cy="41.5" r="2" fill="#A32D2D" />
+                <text x="22" y="43.5" fontWeight="700">Confirmed-case hotspot</text>
+                <text x="10" y="55" fontSize="6" fill="#777">Map is schematic, not survey-grade</text>
+              </g>
+            </svg>
+          </Tile>
+
           {/* WHO risk pills */}
           <div className="grid-risk" style={{ marginBottom: 12 }}>
             {Object.entries(data.risk).map(([k, r]) => {
@@ -363,6 +636,38 @@ function EbolaDashboard() {
                 </Tile>
               );
             })}
+          </div>
+
+          {/* What changed since yesterday */}
+          <Tile id="what-changed" hover={hover} setHover={setHover}
+            onClick={() => openModal(data.what_changed.modal)}
+            role="region" aria-label="What changed in the last 24 hours, click for details"
+            style={{
+              marginTop: 4, marginBottom: 10,
+              background: "#EAF3DE",
+              border: `0.5px solid #97C459`,
+              borderLeft: `3px solid #639922`,
+              borderRadius: 8, padding: "10px 12px",
+            }}>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 6 }}>
+              <div style={{ fontSize: 11, fontWeight: 700, color: "#3B6D11", textTransform: "uppercase", letterSpacing: 0.4 }}>
+                {data.what_changed.title}
+              </div>
+              <div style={{ fontSize: 10, color: "#3B6D11" }}>click for details ↗</div>
+            </div>
+            <ul style={{ margin: 0, paddingLeft: 18, fontSize: 11.5, color: "#27500A", lineHeight: 1.55 }}>
+              {data.what_changed.items.map((it, i) => <li key={i}>{it}</li>)}
+            </ul>
+          </Tile>
+
+          {/* Click hint */}
+          <div style={{
+            display: "flex", alignItems: "center", gap: 8, margin: "10px 0 12px",
+            padding: "8px 12px", background: "#F7F2E8", border: `0.5px solid ${BORDER}`,
+            borderRadius: 8, fontSize: 11.5, color: "#5C4A1F",
+          }}>
+            <span style={{ fontSize: 13 }} aria-hidden="true">👆</span>
+            <span><b>Tip:</b> Every box on this page is clickable. Click any tile, country, news item, or pill to open a panel with more detail and links to primary sources.</span>
           </div>
 
           {/* Critical alert */}
@@ -486,6 +791,19 @@ function EbolaDashboard() {
                 </div>
               </div>
 
+              <SectionHeader>FAQ — for the worried</SectionHeader>
+              <div style={{ marginBottom: 12 }}>
+                {data.faq.items.map((it, i) => (
+                  <details key={i} style={{
+                    marginBottom: 6, padding: "6px 10px", background: "#FAFAFA",
+                    border: `0.5px solid ${BORDER}`, borderRadius: 6, fontSize: 11.5, cursor: "pointer",
+                  }}>
+                    <summary style={{ fontWeight: 600, color: NAVY, lineHeight: 1.4 }}>{it.q}</summary>
+                    <div style={{ marginTop: 6, color: "#333", lineHeight: 1.55 }}>{it.a}</div>
+                  </details>
+                ))}
+              </div>
+
               <SectionHeader>Operational snapshot</SectionHeader>
               <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
                 {data.ops_snapshot.map((o, i) => (
@@ -541,15 +859,48 @@ function EbolaDashboard() {
               View primary sources ↗
             </button>
           </div>
-          {/* Non-affiliation disclaimer */}
+          {/* Share row */}
           <div style={{
-            marginTop: 12, paddingTop: 10, borderTop: `0.5px solid ${BORDER}`,
-            fontSize: 10, color: "#777", lineHeight: 1.5,
+            marginTop: 14, paddingTop: 10, borderTop: `0.5px solid ${BORDER}`,
+            display: "flex", flexWrap: "wrap", alignItems: "center", gap: 8,
+            fontSize: 11, color: "#555",
           }}>
-            <b>About this page:</b> Open-source situational picture aggregating publicly-available information from WHO, CDC, ECDC, national ministries of health, and reputable news outlets. <b>Not officially affiliated</b> with any UN agency, government, or humanitarian organisation. Provided for situational awareness only — not a substitute for official advisories from your organisation, employer, or relevant authorities. Verify any operational decision against primary sources linked inline. Compiled and maintained by an independent analyst.
+            <span style={{ fontWeight: 700, color: "#333" }}>Share / bookmark:</span>
+            <button onClick={() => {
+              const url = window.location.href;
+              navigator.clipboard?.writeText(url);
+              alert("Page link copied to clipboard.");
+            }} style={{
+              padding: "4px 9px", fontSize: 10.5, fontWeight: 600,
+              background: "#fff", color: NAVY, border: `0.5px solid ${BORDER}`,
+              borderRadius: 4, cursor: "pointer",
+            }}>📋 Copy link</button>
+            <a href={`mailto:?subject=${encodeURIComponent("BVD Outbreak — Daily Situational Picture")}&body=${encodeURIComponent("Daily situational picture of the 2026 Bundibugyo Ebola outbreak: " + (typeof window !== "undefined" ? window.location.href : ""))}`}
+              style={{
+                padding: "4px 9px", fontSize: 10.5, fontWeight: 600,
+                background: "#fff", color: NAVY, border: `0.5px solid ${BORDER}`,
+                borderRadius: 4, textDecoration: "none",
+              }}>✉ Email link</a>
+            <a href="https://github.com/" target="_blank" rel="noopener" style={{
+              padding: "4px 9px", fontSize: 10.5, fontWeight: 600,
+              background: "#fff", color: NAVY, border: `0.5px solid ${BORDER}`,
+              borderRadius: 4, textDecoration: "none",
+            }}>📜 View previous versions</a>
+            <span style={{ color: "#999", fontSize: 10 }}>· Add to home screen on phone for one-tap access</span>
           </div>
+
+          {/* Non-affiliation disclaimer (clickable → about) */}
+          <Tile id="about-link" hover={hover} setHover={setHover}
+            onClick={() => openModal(data.about_page)}
+            style={{
+              marginTop: 12, paddingTop: 10, borderTop: `0.5px solid ${BORDER}`,
+              fontSize: 10, color: "#777", lineHeight: 1.5,
+              cursor: "pointer",
+            }}>
+            <b>About this page:</b> Open-source situational picture aggregating publicly-available information from WHO, CDC, ECDC, national ministries of health, and reputable news outlets. <b>Not officially affiliated</b> with any UN agency, government, or humanitarian organisation. Provided for situational awareness only — not a substitute for official advisories from your organisation, employer, or relevant authorities. Verify any operational decision against primary sources linked inline. Compiled and maintained by an independent analyst. <b style={{color: BLUE}}>Click to read full methodology and sources ↗</b>
+          </Tile>
         </div>
-      </div>
+      </main>
 
       <Modal open={modal.open} payload={modal.payload} onClose={closeModal} />
     </div>
