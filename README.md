@@ -3,7 +3,7 @@
 
 Open-source daily situational picture of the 2026 Bundibugyo Ebola virus outbreak in the Democratic Republic of the Congo and Uganda.
 
-**🔗 Live dashboard:** https://<username>.github.io/<repo-name>/
+**🔗 Live dashboard:** https://humsecwatch.github.io/bvd-2026-tracker/
 
 ## What this is
 An aggregated, plain-language daily snapshot of the outbreak — case counts, country-by-country travel restrictions, news, and contextual background — pulling from publicly-available sources including the WHO, US CDC, ECDC, Africa CDC, and reputable news outlets.
