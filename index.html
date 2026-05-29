@@ -64,6 +64,8 @@ const NAVY = "#042C53";
 const BLUE = "#0A6EB4";
 const DANGER = "#A32D2D";
 const DANGER_BG = "#FCEBEB";
+const TEAL = "#0F8A7E";  // Uganda overlay line
+const PURPLE = "#7A4FA3"; // reserved for additional country overlays
 const BORDER = "rgba(0,0,0,0.15)";
 const SUBTLE = "rgba(0,0,0,0.04)";
 
@@ -126,18 +128,17 @@ const data = {
     }
   },
   sparkline: {
-    label: "DRC suspected cases — past 12 days",
-    series: [
-      {d:"15 May", v:6},  {d:"16 May", v:12},  {d:"17 May", v:41},
-      {d:"18 May", v:80}, {d:"19 May", v:134}, {d:"20 May", v:215},
-      {d:"21 May", v:322}, {d:"22 May", v:462}, {d:"23 May", v:590},
-      {d:"24 May", v:712}, {d:"25 May", v:850}, {d:"26 May", v:906},
-      {d:"27 May", v:1077},
-      {d:"28 May", v:1077},
+    label: "Suspected/reported cases by country — past 14 days",
+    dates: ["15 May","16 May","17 May","18 May","19 May","20 May","21 May","22 May","23 May","24 May","25 May","26 May","27 May","28 May"],
+    lines: [
+      { name:"DRC", basis:"suspected", color:BLUE, area:true,
+        data:[6,12,41,80,134,215,322,462,590,712,850,906,1077,1077] },
+      { name:"Uganda", basis:"confirmed", color:TEAL, area:false,
+        data:[2,2,2,2,2,2,2,2,5,5,7,7,7,7] },
     ],
-    modal: { title: "DRC suspected case curve — 15 to 27 May",
-      body: "Cumulative suspected-case counts in DRC since lab confirmation of Bundibugyo virus on 15 May 2026. Note the sharp acceleration through 19–22 May (the period during which WHO declared PHEIC and DG Tedros described the trajectory as 'outpacing us'), followed by a plateau in the 25–27 May window.\n\nIMPORTANT CAVEATS: (1) These are SUSPECTED cases — only ~12% are lab-confirmed (105 of 906 as of 27 May). (2) Numbers reflect cumulative reports to WHO/DRC MoH; some retrospective re-classification has occurred (some suspected cases later ruled out, others added on review). (3) The flat 26→27 May reading reflects reporting lag, not necessarily a real plateau — re-check in 24–48 hours.\n\nData reconstructed from WHO DON603, CDC Current Situation, and Africa CDC bulletins. Daily updates to follow.",
-      sources: [{label:"WHO DON603", url:"https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON602"},{label:"US CDC Current Situation", url:"https://www.cdc.gov/ebola/situation-summary/index.html"},{label:"Wikipedia composite tracker", url:"https://en.wikipedia.org/wiki/2026_Ituri_Province_Ebola_epidemic"}] }
+    modal: { title: "Case curve by country — 15 to 28 May",
+      body: "Cumulative case counts since lab confirmation of Bundibugyo virus on 15 May 2026, now plotted by country on a shared axis.\n\n• DRC line (blue, shaded): SUSPECTED cases — only ~11% are lab-confirmed (121 of 1,077 as of 27 May). Note the sharp acceleration through 19–22 May (PHEIC declaration; Tedros 'outpacing us'), then a plateau in the 26–28 May window.\n• Uganda line (teal): CONFIRMED cases (Uganda confirms rapidly and does not separately report a daily suspected count). Rose 2 → 5 (23 May) → 7 (25 May), holding at 7.\n\nSCALE NOTE: Because DRC (~1,077) dwarfs Uganda (7), the Uganda line necessarily sits low on a shared linear axis — this reflects the true proportion of the two outbreaks, not a rendering artefact. Italy is not plotted: its single repatriated MSF surgeon is a monitored contact, not an in-country suspected-case count.\n\nIMPORTANT CAVEATS: (1) Mixed basis across lines (DRC suspected vs Uganda confirmed) — read the legend. (2) Some retrospective re-classification has occurred. (3) The flat 26→28 May DRC reading reflects reporting lag, not necessarily a real plateau — re-check in 24–48 hours.\n\nData reconstructed from WHO DON603, CDC Current Situation, ECDC, and Africa CDC bulletins.",
+      sources: [{label:"WHO DON603", url:"https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON602"},{label:"US CDC Current Situation", url:"https://www.cdc.gov/ebola/situation-summary/index.html"},{label:"ECDC", url:"https://www.ecdc.europa.eu/en/ebola-virus-disease-outbreak-democratic-republic-congo-and-uganda"},{label:"Wikipedia composite tracker", url:"https://en.wikipedia.org/wiki/2026_Ituri_Province_Ebola_epidemic"}] }
   },
   stats: [
     { id: "drc_cases", value: "1,077 / 121", label: "DRC susp / conf", delta: "+171 susp, +16 conf vs 25 May", warn: true,
@@ -665,28 +666,46 @@ function EbolaDashboard() {
               <div style={{ fontSize: 10, color: "#888" }}>click for caveats ↗</div>
             </div>
             {(() => {
-              const w = 760, h = 60, pad = 4;
-              const s = data.sparkline.series;
-              const max = Math.max(...s.map(p=>p.v));
-              const min = Math.min(...s.map(p=>p.v));
-              const xs = (i) => pad + i * ((w - 2*pad) / (s.length - 1));
-              const ys = (v) => h - pad - ((v - min) / Math.max(1, (max - min))) * (h - 2*pad);
-              const pts = s.map((p,i) => `${xs(i).toFixed(1)},${ys(p.v).toFixed(1)}`).join(" ");
-              const area = `M${xs(0).toFixed(1)},${h-pad} L${pts} L${xs(s.length-1).toFixed(1)},${h-pad} Z`;
+              const w = 360, h = 60, pad = 4;
+              const dates = data.sparkline.dates;
+              const lines = data.sparkline.lines;
+              const n = dates.length;
               return (
-                <svg viewBox={`0 0 ${w} ${h}`} width="100%" height={h} preserveAspectRatio="none" style={{display:"block"}}>
-                  <path d={area} fill={BLUE} fillOpacity="0.12" />
-                  <polyline points={pts} fill="none" stroke={BLUE} strokeWidth="1.8" />
-                  {s.map((p,i) => (
-                    <circle key={i} cx={xs(i)} cy={ys(p.v)} r={i === s.length-1 ? 3 : 1.6}
-                      fill={i === s.length-1 ? DANGER : BLUE} />
-                  ))}
-                </svg>
+                <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
+                  {lines.map((L, li) => {
+                    const max = Math.max(...L.data);
+                    const min = Math.min(...L.data);
+                    const xs = (i) => pad + i * ((w - 2*pad) / (n - 1));
+                    const ys = (v) => h - pad - ((v - min) / Math.max(1, (max - min))) * (h - 2*pad);
+                    const pts = L.data.map((v,i) => `${xs(i).toFixed(1)},${ys(v).toFixed(1)}`).join(" ");
+                    const area = `M${xs(0).toFixed(1)},${h-pad} L${pts} L${xs(n-1).toFixed(1)},${h-pad} Z`;
+                    const peak = L.data[L.data.length-1];
+                    return (
+                      <div key={L.name} style={{ flex: "1 1 220px", minWidth: 200 }}>
+                        <div style={{ display:"flex", justifyContent:"space-between", alignItems:"baseline", marginBottom: 3 }}>
+                          <span style={{ fontSize: 10.5, fontWeight: 700, color: L.color }}>{L.name}</span>
+                          <span style={{ fontSize: 9.5, color: "#888" }}>{L.basis} · <b style={{ color: L.color }}>{peak.toLocaleString()}</b></span>
+                        </div>
+                        <svg viewBox={`0 0 ${w} ${h}`} width="100%" height={h} preserveAspectRatio="none" style={{display:"block"}}>
+                          {L.area && <path d={area} fill={L.color} fillOpacity="0.12" />}
+                          <polyline points={pts} fill="none" stroke={L.color} strokeWidth="1.8" />
+                          {L.data.map((v,i) => (
+                            <circle key={i} cx={xs(i)} cy={ys(v)} r={i === n-1 ? 3 : 1.6}
+                              fill={i === n-1 ? DANGER : L.color} />
+                          ))}
+                        </svg>
+                        <div style={{ display:"flex", justifyContent:"space-between", marginTop: 3, fontSize: 9, color:"#999" }}>
+                          <span>{dates[0]} · {L.data[0].toLocaleString()}</span>
+                          <span>{dates[n-1]} · <b style={{color:DANGER}}>{peak.toLocaleString()}</b></span>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
               );
             })()}
-            <div style={{ display: "flex", justifyContent: "space-between", marginTop: 4, fontSize: 9.5, color: "#888" }}>
-              <span>{data.sparkline.series[0].d} · {data.sparkline.series[0].v}</span>
-              <span>{data.sparkline.series[data.sparkline.series.length-1].d} · <b style={{color:DANGER}}>{data.sparkline.series[data.sparkline.series.length-1].v}</b></span>
+            <div style={{ marginTop: 7, fontSize: 9, color:"#999", fontStyle:"italic" }}>
+              Independent vertical scales — each panel shows that country's trajectory shape, not magnitude vs the other. DRC ≈ 1,077 dwarfs Uganda ≈ 7. DRC = suspected, Uganda = confirmed.
             </div>
           </Tile>
 
