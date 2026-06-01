@@ -52,7 +52,7 @@
 </head>
 <body>
   <div id="root"></div>
-  <script>/* React 18 production UMD — inlined */
+  <script>/* React 18 production UMD — inlined, no CDN */
 /**
  * @license React
  * react.production.min.js
@@ -86,7 +86,7 @@ c.useState=function(a){return g.current.useState(a)};c.useSyncExternalStore=func
 })();
 
 </script>
-  <script>/* ReactDOM 18 production UMD — inlined */
+  <script>/* ReactDOM 18 production UMD — inlined, no CDN */
 /**
  * @license React
  * react-dom.production.min.js
@@ -356,7 +356,7 @@ function(a,b,c){if(!Vd(b))throw Error(m(200));return Wd(null,a,b,!1,c)};Q.unmoun
 })();
 
 </script>
-  <script>/* Dashboard — JSX precompiled */
+  <script>/* Dashboard — JSX precompiled to plain JS at build time */
 const {
   useState,
   useEffect
@@ -432,8 +432,8 @@ const TIER_LEGEND = [{
   label: "Coord. prep"
 }];
 const data = {
-  date_display: "29 May 2026, 2200 hrs Rome time",
-  date_iso: "2026-05-29",
+  date_display: "01 June 2026, 0600 hrs Rome time",
+  date_iso: "2026-06-01",
   timeline: {
     title: "Outbreak timeline",
     events: [{
@@ -493,17 +493,25 @@ const data = {
       t: "DRC data revision: 906/125 cases, 223/17 deaths (suspected revised down, confirmed up); Uganda rises to 9 confirmed",
       kind: "navy"
     }, {
-      d: "29 May (PM)",
-      t: "Italian MSF surgeon tests NEGATIVE at Spallanzani; WHO reports outbreak's first recovery; Meloni presses EU on border vigilance",
+      d: "29 May",
+      t: "MSF surgeon tests NEGATIVE at Spallanzani; WHO reports outbreak's first recovery; Kenya court blocks US quarantine facility (Laikipia Air Base)",
+      kind: "red"
+    }, {
+      d: "30 May",
+      t: "CDC reflects DRC 30 May revised figures (906/125, 223/17); Africa CDC still puts DRC suspected >1,000; Uganda holds at 9",
+      kind: "navy"
+    }, {
+      d: "01 Jun",
+      t: "Kenya facility case set to return to court 2 June; figures stable; Italy doctor negative, under observation to 8 June",
       kind: "navy"
     }, {
       d: "Today",
-      t: "29 May 2026, 2200 hrs Rome time — situational picture as published",
+      t: "01 June 2026, 0600 hrs Rome time — situational picture as published",
       kind: "live"
     }],
     modal: {
       title: "Outbreak timeline — full chronology",
-      body: "24 Apr — First symptoms reported in Mongbwalu Health Zone, Ituri, DRC (identified retrospectively).\n5 May — DRC MoH alerts WHO of cluster of unknown high-mortality illness including four health-worker deaths.\n13 May — Rapid response team in Mongbwalu and Rwampara health zones confirms Bundibugyo strain via INRB lab (Kinshasa).\n15 May — DRC's Ministry of Public Health officially declares outbreak; Uganda confirms first two imported cases in Kampala.\n16 May — WHO Director-General Tedros, after consultation with affected State Parties, determines the event constitutes a Public Health Emergency of International Concern (PHEIC).\n17 May — Rwanda closes all land border crossings with DRC.\n18 May — Africa CDC declares the outbreak a Public Health Emergency of Continental Security (PHECS); US CDC activates Title 42 entry restrictions on DRC/Uganda/South Sudan.\n19 May — US doctor (Stafford) evacuated to Berlin Charité; Bahrain and Jordan announce entry suspensions.\n22 May — WHO IHR Emergency Committee meets; PHEIC confirmed; temporary recommendations issued. ECDC publishes Threat Assessment Brief.\n22-23 May — High-Level Ministerial Meeting in Kampala (DRC, Uganda, South Sudan + Africa CDC + WHO + UNICEF + partners) — regional solidarity framework adopted.\n23 May — Uganda Airlines suspends all Kinshasa flights; Uganda case count rises from 2 to 5.\n24 May — US extends Title 42 to LPRs (HHS 42 CFR 71.40 revision); India MoHFW issues formal travel advisory.\n25 May — WHO DG to AU briefing: outbreak 'outpacing us'. Italy: two suspected cases admitted to Sacco Milan (later negative). Uganda climbs to 7 confirmed.\n26 May — DG Tedros travels to DRC with Chikwe Ihekweazu; Oxford/SII confirm Bundibugyo vaccine trials possible in 2-3 months; US POE-routing extends to Houston (IAH).\n27 May (early) — Tedros publishes statement on X describing \"catastrophic collision of disease and conflict\" in eastern DRC. Africa CDC confirms $319M response budget; ~10% secured. South Africa pledges initial $5M. WHO confirms a Bundibugyo vaccine could take up to 9 months to be available for emergency use.\n27 May (PM) — Italian MSF surgeon working at Salamat health centre (Bunia, Ituri) repatriated under quarantine to Spallanzani Hospital, Rome. First documented direct-contact case in Italy from this outbreak. Italian Farnesina commits €1.15M to outbreak humanitarian response.\n28 May — DRC MoH figures (via ECDC) jump to 1,077 suspected / 121 confirmed cases and 238 / 17 deaths. The MSF surgeon's test and the paediatric patient's test both remain pending. Earlier Como/Sacco cases clarified as Shigella, not Ebola.\n28 May — Travel-restriction wave consolidates (Canada 90-day entry ban + 21-day quarantine; Bahamas restrictions; US adds JFK; DRC suspends Bunia flights). ICAO/UN urge exit-screening over entry bans.\n29 May — Figures hold at 1,077/121 cases and 238/17 deaths; no newer ECDC/WHO daily count published. The Italian MSF surgeon remains asymptomatic, test still pending (day 2 of 21-day monitoring at Spallanzani).\n29 May (AM) — DRC data revision (906/125 cases, 223/17 deaths); Uganda rises to 9 confirmed.\n29 May (PM) — Italian MSF surgeon tests NEGATIVE at Spallanzani (stays under observation to 8 June); WHO reports the outbreak's first recovery (DRC, 27 May); PM Meloni presses EU leadership for coordinated border vigilance.\n29 May 2026, 2200 hrs Rome time — TODAY. Situational picture as published.",
+      body: "24 Apr — First symptoms reported in Mongbwalu Health Zone, Ituri, DRC (identified retrospectively).\n5 May — DRC MoH alerts WHO of cluster of unknown high-mortality illness including four health-worker deaths.\n13 May — Rapid response team in Mongbwalu and Rwampara health zones confirms Bundibugyo strain via INRB lab (Kinshasa).\n15 May — DRC's Ministry of Public Health officially declares outbreak; Uganda confirms first two imported cases in Kampala.\n16 May — WHO Director-General Tedros, after consultation with affected State Parties, determines the event constitutes a Public Health Emergency of International Concern (PHEIC).\n17 May — Rwanda closes all land border crossings with DRC.\n18 May — Africa CDC declares the outbreak a Public Health Emergency of Continental Security (PHECS); US CDC activates Title 42 entry restrictions on DRC/Uganda/South Sudan.\n19 May — US doctor (Stafford) evacuated to Berlin Charité; Bahrain and Jordan announce entry suspensions.\n22 May — WHO IHR Emergency Committee meets; PHEIC confirmed; temporary recommendations issued. ECDC publishes Threat Assessment Brief.\n22-23 May — High-Level Ministerial Meeting in Kampala (DRC, Uganda, South Sudan + Africa CDC + WHO + UNICEF + partners) — regional solidarity framework adopted.\n23 May — Uganda Airlines suspends all Kinshasa flights; Uganda case count rises from 2 to 5.\n24 May — US extends Title 42 to LPRs (HHS 42 CFR 71.40 revision); India MoHFW issues formal travel advisory.\n25 May — WHO DG to AU briefing: outbreak 'outpacing us'. Italy: two suspected cases admitted to Sacco Milan (later negative). Uganda climbs to 7 confirmed.\n26 May — DG Tedros travels to DRC with Chikwe Ihekweazu; Oxford/SII confirm Bundibugyo vaccine trials possible in 2-3 months; US POE-routing extends to Houston (IAH).\n27 May (early) — Tedros publishes statement on X describing \"catastrophic collision of disease and conflict\" in eastern DRC. Africa CDC confirms $319M response budget; ~10% secured. South Africa pledges initial $5M. WHO confirms a Bundibugyo vaccine could take up to 9 months to be available for emergency use.\n27 May (PM) — Italian MSF surgeon working at Salamat health centre (Bunia, Ituri) repatriated under quarantine to Spallanzani Hospital, Rome. First documented direct-contact case in Italy from this outbreak. Italian Farnesina commits €1.15M to outbreak humanitarian response.\n28 May — DRC MoH figures (via ECDC) jump to 1,077 suspected / 121 confirmed cases and 238 / 17 deaths. The MSF surgeon's test and the paediatric patient's test both remain pending. Earlier Como/Sacco cases clarified as Shigella, not Ebola.\n28 May — Travel-restriction wave consolidates (Canada 90-day entry ban + 21-day quarantine; Bahamas restrictions; US adds JFK; DRC suspends Bunia flights). ICAO/UN urge exit-screening over entry bans.\n29 May — Figures hold at 1,077/121 cases and 238/17 deaths; no newer ECDC/WHO daily count published. The Italian MSF surgeon remains asymptomatic, test still pending (day 2 of 21-day monitoring at Spallanzani).\n29 May (AM) — DRC data revision (906/125 cases, 223/17 deaths); Uganda rises to 9 confirmed.\n29 May (PM) — Italian MSF surgeon tests NEGATIVE at Spallanzani (stays under observation to 8 June); WHO reports the outbreak's first recovery (DRC, 27 May); PM Meloni presses EU leadership for coordinated border vigilance.\n29 May — MSF surgeon tests NEGATIVE; WHO reports first recovery (DRC, 27 May); Kenya High Court blocks the US Ebola quarantine facility at Laikipia Air Base, ruling no Ebola-exposed person may enter Kenya.\n30 May — CDC situation update reflects the DRC 28-29 May data revision (906/125 cases, 223/17 deaths). Africa CDC still puts DRC suspected above 1,000.\n01 Jun — Kenya facility legal challenge due back in court 2 June. Case figures stable; Italian doctor remains negative and under observation to 8 June.\n01 June 2026, 0600 hrs Rome time — TODAY. Situational picture as published.",
       sources: [{
         label: "WHO DON603",
         url: "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON602"
@@ -529,19 +537,19 @@ const data = {
   },
   sparkline: {
     label: "Suspected/reported cases by country — past 14 days",
-    dates: ["15 May", "16 May", "17 May", "18 May", "19 May", "20 May", "21 May", "22 May", "23 May", "24 May", "25 May", "26 May", "27 May", "28 May", "29 May"],
+    dates: ["17 May", "18 May", "19 May", "20 May", "21 May", "22 May", "23 May", "24 May", "25 May", "26 May", "27 May", "28 May", "29 May", "31 May", "01 Jun"],
     lines: [{
       name: "DRC",
       basis: "suspected",
       color: BLUE,
       area: true,
-      data: [6, 12, 41, 80, 134, 215, 322, 462, 590, 712, 850, 906, 1077, 906, 906]
+      data: [41, 80, 134, 215, 322, 462, 590, 712, 850, 906, 1077, 906, 906, 906, 906]
     }, {
       name: "Uganda",
       basis: "confirmed",
       color: TEAL,
       area: false,
-      data: [2, 2, 2, 2, 2, 2, 2, 2, 5, 5, 7, 7, 7, 7, 9]
+      data: [2, 2, 2, 2, 2, 2, 5, 5, 7, 7, 7, 7, 9, 9, 9]
     }],
     modal: {
       title: "Case curve by country — 15 to 28 May",
@@ -565,7 +573,7 @@ const data = {
     id: "drc_cases",
     value: "906 / 125",
     label: "DRC susp / conf",
-    delta: "revised 28 May: susp down, conf up (reclassification)",
+    delta: "held at 30 May revised basis; AfCDC suspected >1,000",
     warn: true,
     modal: {
       title: "DRC case count — 25 May",
@@ -602,8 +610,8 @@ const data = {
     id: "uganda",
     value: "9 / 1",
     label: "Uganda conf / death",
-    delta: "+2 confirmed vs 27 May",
-    warn: true,
+    delta: "9 confirmed; 3 linked to DRC travel; no new since 29 May",
+    warn: false,
     modal: {
       title: "Uganda cluster — Kampala health workers",
       body: "Uganda climbed from 5 to 7 confirmed cases on 25 May. The two latest are both Ugandan health workers at the same private Kampala facility — secondary transmission from earlier confirmed cluster. 1 death only (index case, 14 May; the driver who later died is not in the official Ugandan confirmed-death count). Uganda Airlines suspended all FIH flights 23 May; cross-border public transport to DRC also suspended. 127 contacts under institutional quarantine.",
@@ -619,7 +627,7 @@ const data = {
     id: "italy",
     value: "Tested neg.",
     label: "Italy — MSF surgeon, Spallanzani",
-    delta: "Negative 29 May; obs. to 8 June",
+    delta: "Negative; under observation at Spallanzani to 8 June",
     warn: false,
     modal: {
       title: "Italy — MSF surgeon in active quarantine at Spallanzani (27 May)",
@@ -693,10 +701,10 @@ const data = {
   },
   what_changed: {
     title: "What changed in the last 24 hours",
-    items: ["ITALY: MSF surgeon tested NEGATIVE for Ebola at Spallanzani (29 May) — asymptomatic, stays under observation until 8 June. Min. della Salute: no Ebola alarm in Italy", "DRC DATA REVISION (28 May): figures revised to 906 suspected / 125 confirmed; 223 / 17 deaths. Suspected count fell (non-cases removed, reclassification) while CONFIRMED rose — not a real decline in transmission", "UGANDA up to 9 confirmed (from 7): two more healthcare-worker cases in Kampala; still 1 death", "WHO reports the outbreak's FIRST recovery — a patient in DRC recovered and was discharged (27 May)", "Italy escalates diplomatically: PM Meloni writes to EU leadership seeking coordinated border vigilance; proposes the topic for the 18-19 June European Council. Spallanzani expert team to deploy to Kinshasa this weekend"],
+    items: ["KENYA: High Court (29 May) temporarily blocked the US Ebola quarantine facility at Laikipia Air Base; ruled no Ebola-exposed person may enter Kenya. Case returns to court 2 June; Kenya reportedly proceeding despite the order", "US posture hardens: Sec. of State Rubio said the US \"cannot and will not allow any cases of Ebola to enter the United States\" — context for the Kenya facility and the entry-routing rules", "Case figures HELD on the 30 May revised basis: DRC 906 suspected / 125 confirmed, 223 / 17 deaths; Africa CDC still puts DRC suspected above 1,000. Uganda steady at 9 confirmed / 1 death", "Italy MSF surgeon remains NEGATIVE and asymptomatic, under observation at Spallanzani to 8 June. WHO's first recovery (DRC, 27 May) stands", "Contact tracing remains the core weakness: reporting suggests only a fraction of identified contacts are being followed up amid insecurity in Ituri/North Kivu"],
     modal: {
-      title: "Operational delta — 29 May 2026 (2200 hrs)",
-      body: "29 MAY (PM) — A substantive day after a quiet morning.\n\n(1) ITALY DOCTOR NEGATIVE. The MSF surgeon tested NEGATIVE for Ebola at Spallanzani (Min. della Salute, ~17:00). She is asymptomatic, authorised the test voluntarily, and remains under precautionary observation/quarantine until 8 June (covering the incubation window). A single negative during incubation is reassuring but not a full all-clear — the observation period is what matters. Italy is sending a Spallanzani expert team to Kinshasa this weekend; PM Meloni wrote to EU leaders (Christodoulides, Costa, von der Leyen) seeking coordinated border vigilance and proposing the topic for the 18-19 June European Council.\n\n(2) DRC DATA REVISION. DRC MoH figures published 28 May (via ECDC): 906 suspected / 125 confirmed; 223 suspected + 17 confirmed deaths. These are LOWER than 27 May (1,077 / 121) because authorities REVISED the data — removing non-cases and reclassifying some suspected as confirmed. The suspected-case drop is a data-quality correction, NOT a real decline; confirmed cases rose (121 → 125).\n\n(3) UGANDA UP TO 9. Two additional confirmed healthcare-worker cases in Kampala bring Uganda to 9 confirmed, still 1 death; at least 3 linked to DRC travel.\n\n(4) FIRST RECOVERY. WHO reported the outbreak's first documented recovery — a patient in DRC recovered, left hospital and was discharged on 27 May.\n\n(5) TEDROS + WHO RESOURCES. Tedros 27 May: 'catastrophic collision of disease and conflict'. WHO has released US$3.9M from its Contingency Fund for Emergencies and deployed 22 international staff to the field.\n\n(5) EU/ITALY FUNDING. Italian Farnesina committed €1.15M. The EU AFRO Hub in Dakar has delivered 6.3 tonnes of supplies (PPE, medication, sample-collection kits); the EU has a €7.4M R&D blueprint agreement with WHO to fast-track trials.\n\n(6) TRAVEL-RESTRICTION WAVE (28 May sweep of national sources). Canada escalated from surveillance to a 90-day entry ban on residents of DRC/UGA/SSD (from 27 May) plus 21-day quarantine for citizens/PRs/others from 30 May, and suspended immigration documents for 90 days. The Bahamas added entry restrictions + possible quarantine (30-day, from 26 May). The US added JFK as a fourth enhanced-screening port of entry (alongside IAD/ATL/IAH). DRC suspended all flights to/from Bunia (humanitarian/medical exceptions). A broad Asia/Africa screening wave is now confirmed across Hong Kong, Malaysia, Indonesia, Vietnam, Nepal, Sri Lanka, Tanzania, Kenya and Ethiopia. ICAO and the UN urged governments to keep borders open and screen on EXIT rather than entry — placing the entry bans in tension with multilateral guidance.\n\n(7) Next ECDC / WHO daily refresh expected within 24 hours.",
+      title: "Operational delta — 01 June 2026 (0600 hrs)",
+      body: "01 JUNE — Two-and-a-half days on from the 29 May update; the picture has shifted on the diplomatic/operational side more than on raw case counts.\n\n(1) KENYA FACILITY BLOCKED. A Kenyan High Court (Judge Patricia Nyaundi) on 29 May temporarily suspended the US plan to run an Ebola quarantine facility at Laikipia Air Base — intended to isolate ~50 high-risk Americans exposed in DRC. The court ruled no Ebola-exposed or infected person may be admitted to Kenya. A rights group (Katiba Institute) had challenged it as posing grave public-health risks. The case returns to court on 2 June; Kenya is reportedly pushing ahead regardless. US Sec. State Rubio: the US \"cannot and will not allow any cases of Ebola to enter the United States.\"\n\n(2) CASE FIGURES HELD. The 30 May CDC update reflects the 28-29 May DRC revision: 906 suspected / 125 confirmed; 223 suspected + 17 confirmed deaths. Africa CDC still puts DRC suspected above 1,000. Uganda steady at 9 confirmed / 1 death (≥3 linked to DRC travel).\n\n(3) ITALY DOCTOR NEGATIVE. The MSF surgeon tested NEGATIVE for Ebola at Spallanzani (Min. della Salute, ~17:00). She is asymptomatic, authorised the test voluntarily, and remains under precautionary observation/quarantine until 8 June (covering the incubation window). A single negative during incubation is reassuring but not a full all-clear — the observation period is what matters. Italy is sending a Spallanzani expert team to Kinshasa this weekend; PM Meloni wrote to EU leaders (Christodoulides, Costa, von der Leyen) seeking coordinated border vigilance and proposing the topic for the 18-19 June European Council.\n\n(2) DRC DATA REVISION. DRC MoH figures published 28 May (via ECDC): 906 suspected / 125 confirmed; 223 suspected + 17 confirmed deaths. These are LOWER than 27 May (1,077 / 121) because authorities REVISED the data — removing non-cases and reclassifying some suspected as confirmed. The suspected-case drop is a data-quality correction, NOT a real decline; confirmed cases rose (121 → 125).\n\n(3) UGANDA UP TO 9. Two additional confirmed healthcare-worker cases in Kampala bring Uganda to 9 confirmed, still 1 death; at least 3 linked to DRC travel.\n\n(4) FIRST RECOVERY. WHO reported the outbreak's first documented recovery — a patient in DRC recovered, left hospital and was discharged on 27 May.\n\n(5) TEDROS + WHO RESOURCES. Tedros 27 May: 'catastrophic collision of disease and conflict'. WHO has released US$3.9M from its Contingency Fund for Emergencies and deployed 22 international staff to the field.\n\n(5) EU/ITALY FUNDING. Italian Farnesina committed €1.15M. The EU AFRO Hub in Dakar has delivered 6.3 tonnes of supplies (PPE, medication, sample-collection kits); the EU has a €7.4M R&D blueprint agreement with WHO to fast-track trials.\n\n(6) TRAVEL-RESTRICTION WAVE (28 May sweep of national sources). Canada escalated from surveillance to a 90-day entry ban on residents of DRC/UGA/SSD (from 27 May) plus 21-day quarantine for citizens/PRs/others from 30 May, and suspended immigration documents for 90 days. The Bahamas added entry restrictions + possible quarantine (30-day, from 26 May). The US added JFK as a fourth enhanced-screening port of entry (alongside IAD/ATL/IAH). DRC suspended all flights to/from Bunia (humanitarian/medical exceptions). A broad Asia/Africa screening wave is now confirmed across Hong Kong, Malaysia, Indonesia, Vietnam, Nepal, Sri Lanka, Tanzania, Kenya and Ethiopia. ICAO and the UN urged governments to keep borders open and screen on EXIT rather than entry — placing the entry bans in tension with multilateral guidance.\n\n(7) Next ECDC / WHO daily refresh expected within 24 hours.",
       sources: [{
         label: "Al Jazeera: Tedros catastrophic collision",
         url: "https://www.aljazeera.com/news/2026/5/27/drc-facing-catastrophic-collision-of-ebola-and-war-who-chief-warns"
@@ -710,8 +718,8 @@ const data = {
     }
   },
   critical_alert: {
-    title: "Italy: MSF surgeon tests NEGATIVE at Spallanzani; remains under observation to 8 June",
-    body: "The Italian MSF surgeon (direct contact 16 May in Bunia; emergency surgery 18 May on a child) tested NEGATIVE for Ebola at Spallanzani on 29 May. She is asymptomatic and stays under precautionary observation/quarantine until 8 June, covering the incubation window. Min. della Salute: no Ebola alarm in Italy. PM Meloni has written to EU leaders pushing for coordinated border vigilance. Separately, WHO reported the outbreak's first recovery and discharge in DRC (27 May).",
+    title: "Kenya court blocks US Ebola quarantine facility; case returns to court 2 June",
+    body: "A Kenyan High Court (Judge Patricia Nyaundi, 29 May) temporarily suspended the US plan to operate an Ebola quarantine facility at Laikipia Air Base for Americans exposed in DRC — ruling that anyone exposed to or infected by Ebola may not be admitted to Kenya. The case returns to court 2 June; Kenya is reportedly pushing ahead despite the order. Separately: the Italian MSF surgeon tested NEGATIVE (29 May), under observation to 8 June; WHO reported the outbreak's first recovery (DRC, 27 May). Latest case figures unchanged on the 30 May revised basis.",
     modal: {
       title: "Italy MSF surgeon — full operational debrief",
       body: "― ITALY OPERATIONAL FACTS (27 May 2026) ―\nAn Italian female surgeon working with Médecins Sans Frontières (MSF) at the Salamat health centre in Bunia, Ituri (DRC) — the epicentre of the outbreak — is being repatriated under quarantine. She had direct clinical contact on 16 May with patients later confirmed positive for Bundibugyo virus, and on 18 May performed emergency life-saving surgery on a child grenade-blast victim now classified as a suspected Ebola case (test pending). She is asymptomatic; she arrives in Rome today on a specially-equipped flight authorised by the Ministero della Salute and will be placed in quarantine + active surveillance at the Istituto Nazionale per le Malattie Infettive Lazzaro Spallanzani.\n\n― OFFICIAL ITALIAN POSITION ―\nMin. della Salute: \"There are no Ebola cases in Italy. Alarm in our country remains very low.\" Italian Foreign Ministry (Farnesina) committed €1.15M to the humanitarian response in the affected DRC provinces. Lazio Region informed.\n\n― ECDC POSITION ―\nECDC states risk of infection for EU/EEA residents remains very low, but notes this outbreak \"is more challenging to control than the more commonly detected Zaire ebolavirus\" — different strain, no approved vaccine, no specific treatment.\n\n― TEDROS 27 MAY ―\nIn parallel, WHO DG published a formal statement on X today: \"Eastern DRC now faces a catastrophic collision of disease and conflict with the Ebola outbreak in Ituri province outpacing the response. Ongoing clashes are driving mass displacement, pushing exposed contacts into overcrowded camps and severing critical containment corridors. Stopping this Ebola transmission depends entirely on humanitarian access.\"\n\n― CONTEXT ON THE STRAIN ―\nBundibugyo virus is one of six known orthoebolavirus species, four of which cause Ebola disease in humans. It was first identified in 2007 after an outbreak in Uganda's Bundibugyo District, on the border with DRC. A second outbreak followed in DRC's Province Orientale in 2012 (59 cases, 34 deaths). Case-fatality rates in the two prior outbreaks ranged 30-50%.\n\nCrucially: existing licensed Ebola vaccines (Ervebo / rVSV-ZEBOV and the Janssen two-dose regimen) target the Zaire strain. Animal studies suggest only partial cross-protection against Bundibugyo. The strain was previously too rare to justify dedicated vaccine investment — a gap now being addressed urgently.\n\nThe current outbreak went undetected for several weeks because initial diagnostic tests targeted the Zaire strain and came back negative. Lab confirmation of Bundibugyo did not occur until 15 May, despite first symptoms reported on 24 April.",
@@ -1191,8 +1199,18 @@ const data = {
     }
   }],
   whats_new: [{
+    headline: "Kenya court blocks US Ebola quarantine facility",
+    summary: "A Kenyan High Court (Judge Patricia Nyaundi, 29 May) temporarily suspended the US plan to operate an Ebola quarantine facility at Laikipia Air Base for ~50 high-risk Americans exposed in DRC, ruling no Ebola-exposed person may enter Kenya. Brought by the Katiba Institute rights group citing grave public-health risks. Case returns to court 2 June; Kenya reportedly proceeding despite the order.",
+    outlet: "AP / Al Jazeera",
+    url: "https://www.aljazeera.com/news/2026/5/29/kenyan-court-suspends-us-ebola-quarantine-facility-plan"
+  }, {
+    headline: "Rubio: US \"will not allow any cases of Ebola to enter\"",
+    summary: "US Secretary of State Marco Rubio said the United States cannot and will not allow any Ebola cases to enter the country — the policy backdrop to the Kenya facility plan and the IAD/ATL/IAH/JFK entry-routing rules. One US doctor with Ebola is being monitored in Germany (with five family members); another American is symptom-free in quarantine in Prague.",
+    outlet: "CNN",
+    url: "https://www.cnn.com/2026/05/29/africa/kenyan-court-ebola-facility-intl"
+  }, {
     headline: "Italy: MSF surgeon tests NEGATIVE for Ebola",
-    summary: "The Italian Ministry of Health confirmed (29 May ~17:00) that the MSF surgeon repatriated from Bunia tested NEGATIVE for Ebola at Spallanzani. She is asymptomatic, authorised the test voluntarily, and remains under precautionary observation until 8 June. The ministry reiterated there is no Ebola alarm in Italy.",
+    summary: "The Italian Ministry of Health confirmed (29 May) that the MSF surgeon repatriated from Bunia tested NEGATIVE for Ebola at Spallanzani. She is asymptomatic and remains under precautionary observation until 8 June. The ministry reiterated there is no Ebola alarm in Italy.",
     outlet: "ANSA",
     url: "https://www.ansa.it/sito/notizie/topnews/2026/05/29/-ebola-test-negativo-per-la-dottoressa-rientrata-dal-congo-_6f5e3de0-1571-4ce3-939c-e0233b638ec6.html"
   }, {
@@ -1415,6 +1433,18 @@ const data = {
       title: "Movement & access — disruption scale",
       scale: ["Monitoring", "Screening", "Restricted", "Suspended", "Closed"],
       items: [{
+        label: "Entebbe–Kinshasa route — ALL 5 carriers suspended",
+        sev: 3,
+        mode: "air",
+        modal: {
+          title: "Entebbe–Kinshasa route — fully suspended (all five operators)",
+          body: "The Entebbe–Kinshasa (EBB–FIH) route was served by five airlines — Uganda Airlines, Kenya Airways, RwandAir, Ethiopian Airlines and Air Congo — and ALL have now suspended operations on this route as a precautionary Ebola measure (late May 2026). Uganda Airlines' suspension took effect 23 May 'until further notice', coordinated with Uganda's halt of cross-border public transport with DRC.\n\nIMPORTANT NUANCE: this is the East-African regional cross-border route. It does NOT mean these carriers have stopped flying entirely — Ethiopian still operates its Addis Ababa–Kinshasa hub service (adjusted for screening, not suspended), and Brussels Airlines still flies Brussels–Kinshasa daily. The practical effect is that the regional feeder route into Kinshasa via the East-African hubs is shut, concentrating remaining capacity on the Addis and Brussels intercontinental gateways.",
+          sources: [{
+            label: "Daily Monitor (Uganda)",
+            url: "https://www.monitor.co.ug/uganda/news/national/uganda-airlines-suspends-kinshasa-flights-over-ebola-5471036"
+          }]
+        }
+      }, {
         label: "DRC — all Bunia flights suspended",
         sev: 3,
         mode: "air",
@@ -1525,19 +1555,19 @@ const data = {
         mode: "air",
         modal: {
           title: "Ethiopian Airlines — operating, hub critical",
-          body: "Ethiopian Airlines (ET) — the dominant African transit point to/from DRC and Uganda via Addis Ababa (ADD) — continues full operations. No suspensions. Pre-departure thermal screening at ADD. The hub's continued operation is essential for humanitarian and commercial connectivity across the affected region.",
+          body: "Ethiopian Airlines (ET) — the dominant African transit point to/from DRC and Uganda via Addis Ababa (ADD) — continues to operate its Addis–Kinshasa hub service, though it has suspended the Entebbe–Kinshasa regional leg and is adjusting its wider continental schedule for enhanced screening. Pre-departure thermal screening at ADD. The hub's continued operation is essential for humanitarian and commercial connectivity; with the East-African feeder routes shut, Addis carries an even larger share of remaining capacity into Kinshasa.",
           sources: [{
             label: "Ethiopian Airlines",
             url: "https://www.ethiopianairlines.com"
           }]
         }
       }, {
-        label: "Kenya Airways / RwandAir / GCC carriers",
-        severity: 0,
+        label: "Kenya Airways / RwandAir · Kinshasa suspended; GCC operating",
+        severity: 2,
         mode: "air",
         modal: {
           title: "Regional and GCC airline posture — monitoring",
-          body: "Kenya Airways (KQ): operating; enhanced gate screening for outbound passengers to USA/Asia destinations subject to entry rules.\n\nRwandAir (WB): operating; the impact is concentrated at land borders, not at Kigali International.\n\nEmirates, Qatar Airways, Etihad: GCC mega-hubs (DXB, DOH, AUH) handle large volumes of DRC/Uganda transit traffic. No suspensions announced. Watch for follow-on mirroring of Bahrain CAA posture if the outbreak grows.",
+          body: "Kenya Airways (KQ): has SUSPENDED its Kinshasa service — KQ was one of only two carriers (with Ethiopian) running daily East-Africa–Kinshasa flights, so its exit removes a large share of regional seats and will push up fares on remaining routes. KQ continues other operations with enhanced gate screening.\n\nRwandAir (WB): has suspended its Entebbe–Kinshasa operations; broader impact concentrated at land borders and around DRC airspace restrictions tied to the M23 conflict.\n\nEmirates, Qatar Airways, Etihad: GCC mega-hubs (DXB, DOH, AUH) continue to operate and handle large volumes of DRC/Uganda transit traffic — no suspensions announced. India's DGCA has issued a screening SOP covering carriers including Emirates, Qatar Airways, Etihad, Kenya Airways and Ethiopian.",
           sources: [{
             label: "Kenya Airways",
             url: "https://www.kenya-airways.com"
