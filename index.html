@@ -1,27 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BVD Outbreak Watch</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'&gt;&lt;circle cx='16' cy='16' r='14' fill='%23A32D2D'/&gt;&lt;circle cx='16' cy='16' r='14' fill='none' stroke='%23501313' stroke-width='1.5'/&gt;&lt;text x='16' y='22' font-family='Arial,sans-serif' font-size='18' font-weight='700' text-anchor='middle' fill='white'&gt;B&lt;/text&gt;&lt;/svg&gt;">
-
-  <meta name="description" content="Open-source daily situational picture of the 2026 Bundibugyo Ebola virus outbreak in DRC and Uganda. Case figures, country posture, news and context.">
-  <meta name="keywords" content="Ebola, Bundibugyo, BVD, DRC, Uganda, PHEIC, outbreak, situational, humanitarian">
-
-  <!-- OpenGraph -->
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="BVD outbreak watch">
-  <meta property="og:title" content="BVD outbreak watch — Daily situational picture">
-  <meta property="og:description" content="Open-source daily situational picture of the 2026 Bundibugyo Ebola outbreak in DRC and Uganda. Case figures, country posture, news and context. Updated daily.">
-  <meta property="og:locale" content="en_GB">
-
-  <!-- Twitter / X -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="BVD outbreak watch — Daily situational picture">
-  <meta name="twitter:description" content="Open-source daily situational picture of the 2026 Bundibugyo Ebola outbreak in DRC and Uganda.">
-  <!-- Tailwind not loaded: this page uses only inline custom classes; the CDN was unused. -->
-  <style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BVD Outbreak Watch</title>
+<style>
     body { margin: 0; background: #faf9f6; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; }
     #root { display: block; }
     .sr-only {
@@ -48,12 +31,32 @@
       * { box-shadow: none !important; }
       @page { size: A4 portrait; margin: 10mm; }
     }
+    /* ===== Behind-the-numbers box: deep blood red, marked IMPORTANT ===== */
+    #stat-behind {
+      background: #6E0B14 !important;
+      border: 1.5px solid #4A070E !important;
+      box-shadow: 0 2px 10px rgba(110,11,20,0.30) !important;
+      position: relative;
+    }
+    #stat-behind, #stat-behind * { color: #ffffff !important; }
+    #stat-behind::before {
+      content: "\26A0 IMPORTANT \2014 READ FIRST";
+      display: inline-block;
+      font-size: 10px; font-weight: 800; letter-spacing: 1px;
+      background: #ffffff; color: #6E0B14;
+      padding: 2px 7px; border-radius: 3px; margin-bottom: 7px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    }
+    #stat-behind:hover { border-color: #2E0509 !important; }
+    @keyframes behindPulse { 0%,100%{ box-shadow:0 2px 10px rgba(110,11,20,0.30);} 50%{ box-shadow:0 2px 16px rgba(110,11,20,0.55);} }
+    #stat-behind { animation: behindPulse 2.8s ease-in-out infinite; }
+    @media print { #stat-behind { animation: none !important; } }
   </style>
 </head>
 <body>
-  <div id="root"></div>
-  <script>/* React 18 production UMD — inlined, no CDN */
-/**
+<div id="root"></div>
+
+<script>/**
  * @license React
  * react.production.min.js
  *
@@ -84,10 +87,8 @@ render:a}};c.isValidElement=M;c.lazy=function(a){return{$$typeof:Aa,_payload:{_s
 c.useEffect=function(a,b){return g.current.useEffect(a,b)};c.useId=function(){return g.current.useId()};c.useImperativeHandle=function(a,b,c){return g.current.useImperativeHandle(a,b,c)};c.useInsertionEffect=function(a,b){return g.current.useInsertionEffect(a,b)};c.useLayoutEffect=function(a,b){return g.current.useLayoutEffect(a,b)};c.useMemo=function(a,b){return g.current.useMemo(a,b)};c.useReducer=function(a,b,c){return g.current.useReducer(a,b,c)};c.useRef=function(a){return g.current.useRef(a)};
 c.useState=function(a){return g.current.useState(a)};c.useSyncExternalStore=function(a,b,c){return g.current.useSyncExternalStore(a,b,c)};c.useTransition=function(){return g.current.useTransition()};c.version="18.3.1"});
 })();
-
 </script>
-  <script>/* ReactDOM 18 production UMD — inlined, no CDN */
-/**
+<script>/**
  * @license React
  * react-dom.production.min.js
  *
@@ -354,9 +355,8 @@ c,!1,d,e);a[Ja]=b.current;sc(8===a.nodeType?a.parentNode:a);return new Xf(b)};Q.
 var d=null!=c&&c.hydratedSources||null,e=!1,f="",g=aj;null!==c&&void 0!==c&&(!0===c.unstable_strictMode&&(e=!0),void 0!==c.identifierPrefix&&(f=c.identifierPrefix),void 0!==c.onRecoverableError&&(g=c.onRecoverableError));b=Wi(b,null,a,1,null!=c?c:null,e,!1,f,g);a[Ja]=b.current;sc(a);if(d)for(a=0;a<d.length;a++)c=d[a],e=c._getVersion,e=e(c._source),null==b.mutableSourceEagerHydrationData?b.mutableSourceEagerHydrationData=[c,e]:b.mutableSourceEagerHydrationData.push(c,e);return new Ud(b)};Q.render=
 function(a,b,c){if(!Vd(b))throw Error(m(200));return Wd(null,a,b,!1,c)};Q.unmountComponentAtNode=function(a){if(!Vd(a))throw Error(m(40));return a._reactRootContainer?(yb(function(){Wd(null,null,a,!1,function(){a._reactRootContainer=null;a[Ja]=null})}),!0):!1};Q.unstable_batchedUpdates=Tf;Q.unstable_renderSubtreeIntoContainer=function(a,b,c,d){if(!Vd(c))throw Error(m(200));if(null==a||void 0===a._reactInternals)throw Error(m(38));return Wd(a,b,c,!1,d)};Q.version="18.3.1-next-f1338f8080-20240426"});
 })();
-
 </script>
-  <script>/* Dashboard — JSX precompiled to plain JS at build time */
+<script>/* Dashboard — JSX precompiled to plain JS at build time */
 const {
   useState,
   useEffect
@@ -432,9 +432,18 @@ const TIER_LEGEND = [{
   key: "teal",
   label: "Coord. prep"
 }];
+/* ================================================================
+   DATA  -  EDIT CONTENT HERE
+   Every daily update happens inside this single object:
+   stats (tiles incl. the 'behind' box), chart arrays, alert, risk,
+   posture chips, impact lanes, whats-new, archive, sources,
+   timeline and modal text. Change values here, then run:
+       node ebola_dashboard_precompile.js
+   You should not need to touch the render code below the data.
+   ================================================================ */
 const data = {
-  date_display: "05 June 2026, 2030 hrs Rome time",
-  date_iso: "2026-06-05",
+  date_display: "06 June 2026, 0745 hrs Rome time",
+  date_iso: "2026-06-06",
   timeline: {
     title: "Outbreak timeline",
     events: [{
@@ -522,8 +531,12 @@ const data = {
       t: "ECDC evening update: DRC 381 confirmed / 64 deaths / 233 in isolation (DRC MoH publ. 4 Jun); Uganda climbs to 19 / 2 (three new cases are contacts; deaths double). No WHO DON606 yet; EU Health Ministers met by videoconference today.",
       kind: "red"
     }, {
+      d: "06 Jun",
+      t: "WHO and Africa CDC launch a US$518M joint 'One Response' plan (June–November); DRC MoH sitrep reports rapid, continuous community transmission with 71 new cases in 24h; US CDC calls it the largest Bundibugyo outbreak on record.",
+      kind: "red"
+    }, {
       d: "Today",
-      t: "05 June 2026, 2030 hrs Rome time — situational picture as published (DRC figures publ. 4 Jun; Uganda as of 5 Jun)",
+      t: "06 June 2026, 0745 hrs Rome time — situational picture as published (DRC figures publ. 4 Jun; Uganda as of 5 Jun)",
       kind: "live"
     }],
     modal: {
@@ -615,13 +628,13 @@ const data = {
   },
   stats: [{
     id: "behind",
-    value: "\u24D8",
+    value: "\u26A0",
     label: "Behind the numbers",
-    delta: "Tap to read how to interpret these figures",
-    warn: false,
+    delta: "Tap to read \u2014 why today\u2019s count understates the outbreak",
+    warn: true,
     modal: {
       title: "Behind the numbers \u2014 how to read this tracker",
-      body: "Figures on this dashboard are official to the dates shown, not to the moment you are reading. Here is what sits behind them.\n\n\u2022 DATA CUTOFF. DRC case totals are DRC Ministry of Health figures relayed by ECDC \u2014 latest published 4 June (381 confirmed / 64 deaths / 233 in isolation). Uganda figures are as of 5 June (19 / 2). The dashboard was refreshed on the evening of 5 June.\n\n\u2022 WHY SOURCES DIFFER \u2014 three counts, three definitions: ECDC / DRC MoH (used here) is the most current daily confirmed figure; WHO Disease Outbreak News is lower and older (DON605 reported 134 / 18 as of 29 May) because WHO publishes weekly and validates via the IHR process \u2014 it is the formal record and lags, and no DON606 has appeared yet; Africa CDC is higher (cumulative suspected above 1,100), counting everything ever flagged.\n\n\u2022 A REPORTING-BASIS CHANGE. Around 4 June, ECDC switched from a \u2018suspected under investigation\u2019 count to \u2018individuals hospitalised in isolation\u2019 (now 233). Part of the rise from ~116 to 206 to 233 reflects this redefinition, not only new infections.\n\n\u2022 HOW TO READ THE CHART. The solid line is confirmed cases (the firmest figure); the dashed line tracks suspected / in-isolation; the dotted amber line is Africa CDC\u2019s cumulative suspected. Endpoint chips name each figure\u2019s source and date.\n\nRule of thumb: ECDC / DRC MoH = most current confirmed; WHO DON = lags but is the formal IHR record; Africa CDC = widest cumulative. The true caseload sits at or above the ECDC confirmed figure."
+      body: "IMPORTANT \u2014 how to read these figures, and why today\u2019s headline count understates the outbreak.\n\n\u2022 TODAY\u2019S COUNT IS A FLOOR, NOT A CEILING. The headline DRC total (381 confirmed / 64 deaths / 233 in isolation) is the latest harmonised figure \u2014 DRC MoH published it on 4 June (data to 3 June). But on 5 June the DRC MoH sitrep reported 71 new cases in a single 24-hour period and warned of \u2018rapid and continuous community transmission\u2019. Those 71 are not yet folded into a new cumulative, so the true current caseload is higher than 381. Read 381 as a floor.\n\n\u2022 THREE SOURCES, THREE DEFINITIONS. ECDC / DRC MoH (used here) is the most current harmonised confirmed figure. WHO Disease Outbreak News is lower and older (DON605: 134 / 18 as of 29 May) because WHO publishes weekly and validates through the IHR process \u2014 it is the formal record and lags, and no DON606 has appeared yet. Africa CDC is higher (cumulative suspected above 1,100), counting everything ever flagged (suspected + confirmed + discarded).\n\n\u2022 A REPORTING-BASIS CHANGE. Around 4 June ECDC switched from a \u2018suspected under investigation\u2019 count to \u2018individuals hospitalised in isolation\u2019 (now 233). Part of the rise from ~116 to 206 to 233 reflects this redefinition, not only new infections.\n\n\u2022 FIGURES ARE OFFICIAL TO THEIR DATES, NOT TO THE MINUTE YOU READ. DRC to 3 June (published 4 June); Uganda to 5 June (19 / 2). The dashboard was refreshed on the morning of 6 June.\n\n\u2022 HOW TO READ THE CHART. The solid line is confirmed cases (firmest); the dashed line tracks suspected / in-isolation; the dotted amber line is Africa CDC\u2019s cumulative suspected. Endpoint chips name each figure\u2019s source and date.\n\nBottom line: ECDC / DRC MoH = most current confirmed; WHO DON = lags but is the formal IHR record; Africa CDC = widest cumulative. The real caseload sits at or above the ECDC confirmed figure \u2014 and given the 71-in-24h signal, materially above it right now."
     }
   }, {
     id: "drc_cases",
@@ -681,7 +694,7 @@ const data = {
     id: "recoveries",
     value: "8",
     label: "Recovered & discharged",
-    delta: "6 DRC + 2 Uganda (WHO DG briefing, 3 Jun); 80 treatment beds in Bunia",
+    delta: "6 DRC + 2 Uganda (WHO, 3 Jun); 80 beds in Bunia; new US$518M WHO/AfCDC plan",
     warn: false,
     modal: {
       title: "First recoveries — five discharged in Bunia (1 Jun)",
@@ -746,7 +759,7 @@ const data = {
   },
   what_changed: {
     title: "What changed in the last 24 hours",
-    items: ["DRC CLIMBS to 381 confirmed / 64 deaths — DRC MoH figures published 4 June (ECDC update 5 June); +18 confirmed and two further deaths. 233 individuals now hospitalised in isolation (up from 206). Ituri 359 of 381 (17 health zones); North Kivu 19; South Kivu 3", "NEW exported-case signal: WHO is working with Uganda and the UAE on a travel-linked case under investigation (3 Jun DG briefing) — distinct from the resolved, all-negative Brazil and Italy scares. WHO also reports eight recoveries (six DRC, two Uganda) and 80 treatment beds in Bunia", "KENYA: the High Court extended its block on the US-backed facility (reported at least three weeks) and ordered disclosure of the US deal; President Ruto: 'When President Trump asked... I gave the okay.' Uganda has risen to 19/2 with continued local transmission", "WHO DON gap persists: DON605 (134/18, 29 May) is still the latest — no DON606 has appeared — now far below ECDC's 381 because WHO publishes weekly and validates via IHR", "EU Health Ministers hold their informal videoconference on the outbreak TODAY (5 June); exported-case scares in Brazil and Italy remain NEGATIVE"],
+    items: ["WHO + AFRICA CDC LAUNCH a US$518M joint 'One Response' plan (5 June), covering June–November — a single costed, time-bound continental plan (emergency coordination, surveillance, testing, IPC, clinical care, community engagement) built on the DRC and Uganda national plans. Africa CDC DG Kaseya: 'Ebola moves fast. Africa must move faster.'", "DRC WARNS of 'rapid and continuous community transmission' — its latest sitrep reports 71 new cases in a 24-hour period. The harmonised cumulative (381) has not yet been superseded in ECDC, but the daily signal points to acceleration; US CDC now calls this the largest Bundibugyo outbreak on record.", "DRC holds at 381 confirmed / 64 deaths — DRC MoH figures published 4 June (ECDC update 5 June); +18 confirmed and two further deaths. 233 individuals now hospitalised in isolation (up from 206). Ituri 359 of 381 (17 health zones); North Kivu 19; South Kivu 3", "NEW exported-case signal: WHO is working with Uganda and the UAE on a travel-linked case under investigation (3 Jun DG briefing) — distinct from the resolved, all-negative Brazil and Italy scares. WHO also reports eight recoveries (six DRC, two Uganda) and 80 treatment beds in Bunia", "KENYA: the High Court extended its block on the US-backed facility (reported at least three weeks) and ordered disclosure of the US deal; President Ruto: 'When President Trump asked... I gave the okay.' Uganda has risen to 19/2 with continued local transmission", "WHO DON gap persists: DON605 (134/18, 29 May) is still the latest — no DON606 has appeared — now far below ECDC's 381 because WHO publishes weekly and validates via IHR", "EU Health Ministers hold their informal videoconference on the outbreak TODAY (5 June); exported-case scares in Brazil and Italy remain NEGATIVE"],
     modal: {
       title: "Operational delta — 05 June 2026 (0730 hrs)",
       body: "05 JUNE — Published 5 June; latest official case figures are to 3 June (ECDC report 4 June).\n\n(A) DEATHS JUMP. DRC confirmed deaths rose from 48 to 60 while confirmed cases reached 344 (+23 in a day) — the confirmed-case fatality ratio is now around 17%. Ituri accounts for 322 of 344. The rise reflects both continued transmission and ongoing lab confirmation of the backlog.\n\n(B) KENYA — BLOCK EXTENDED. The High Court extended its order halting the US field hospital for seven days and directed the government to disclose its deal with the US, after protests in Nanyuki in which two people died (1 Jun). President Ruto continues to defend the facility.\n\n(C) WHO DATA GAP. The latest WHO DON (605) still shows 134/18 as of 29 May — well below ECDC — because WHO publishes weekly; the next DON is due this week. Uganda has risen to 19/2 with continued local transmission; EU Health Ministers meet 5 June.\n\n(A) UGANDA LOCAL TRANSMISSION. Uganda rose to 19 confirmed (2 deaths) by 5 June. Officials link at least seven cases to local transmission events and four to DRC travel; of nine with known location, eight are in Kampala. Until now Uganda's cases were imported — this is the first clear indication of self-sustaining chains in a capital city of ~4 million.\n\n(B) KENYA TURNS VIOLENT. Protests against the US-backed quarantine facility at Laikipia Air Base escalated; two people died of gunshot wounds in Nanyuki on 1 June. The High Court extended its conservatory orders (no facility, no admission of exposed persons) and ordered the government to disclose the facility's details; President Ruto defended it publicly, likening it to other Kenyan facilities.\n\n(C) DRC. Confirmed rose to 321 (48 deaths); pending suspected 116. Response is scaling — MSF building a 65-bed ETC, CEPI fast-tracking three vaccine candidates.\n\n(0) CASE JUMP + RECOVERIES. DRC lab-confirmed cases rose to 282 (from 125) with 42 confirmed deaths (31 May, via ECDC) — Ituri 264, North Kivu 15, South Kivu 3; Africa CDC puts suspected above 1,100. Counterbalancing this: five people have recovered and been discharged (four nurses + a lab worker) in Bunia, and contact tracing has improved toward ~45%. Suspected cases are now being investigated in Brazil and Italy tied to travel from affected nations.\n\n(1) KENYA FACILITY — IN COURT TODAY. A Kenyan High Court (Judge Patricia Nyaundi, 29 May) temporarily blocked the US plan to run an Ebola quarantine facility (50-bed field hospital) at Laikipia Air Base for Americans exposed in DRC; the challenge (Katiba Institute) is due back in court 2 June. Kenya is pushing ahead despite the order; the US committed $13.5M to Kenya's Ebola preparedness in a Rubio–Ruto call. US Sec. State Rubio: the US \"cannot and will not allow any cases of Ebola to enter the United States.\" A Kenyan High Court (Judge Patricia Nyaundi) on 29 May temporarily suspended the US plan to run an Ebola quarantine facility at Laikipia Air Base — intended to isolate ~50 high-risk Americans exposed in DRC. The court ruled no Ebola-exposed or infected person may be admitted to Kenya. A rights group (Katiba Institute) had challenged it as posing grave public-health risks. The case returns to court on 2 June; Kenya is reportedly pushing ahead regardless. US Sec. State Rubio: the US \"cannot and will not allow any cases of Ebola to enter the United States.\"\n\n(2) CASE FIGURES HELD. The 30 May CDC update reflects the 28-29 May DRC revision: 906 suspected / 125 confirmed; 223 suspected + 17 confirmed deaths. Africa CDC still puts DRC suspected above 1,000. Uganda steady at 9 confirmed / 1 death (≥3 linked to DRC travel).\n\n(3) ITALY DOCTOR NEGATIVE. The MSF surgeon tested NEGATIVE for Ebola at Spallanzani (Min. della Salute, ~17:00). She is asymptomatic, authorised the test voluntarily, and remains under precautionary observation/quarantine until 8 June (covering the incubation window). A single negative during incubation is reassuring but not a full all-clear — the observation period is what matters. Italy is sending a Spallanzani expert team to Kinshasa this weekend; PM Meloni wrote to EU leaders (Christodoulides, Costa, von der Leyen) seeking coordinated border vigilance and proposing the topic for the 18-19 June European Council.\n\n(2) DRC DATA REVISION. DRC MoH figures published 28 May (via ECDC): 906 suspected / 125 confirmed; 223 suspected + 17 confirmed deaths. These are LOWER than 27 May (1,077 / 121) because authorities REVISED the data — removing non-cases and reclassifying some suspected as confirmed. The suspected-case drop is a data-quality correction, NOT a real decline; confirmed cases rose (121 → 125).\n\n(3) UGANDA UP TO 9. Two additional confirmed healthcare-worker cases in Kampala bring Uganda to 9 confirmed, still 1 death; at least 3 linked to DRC travel.\n\n(4) FIRST RECOVERY. WHO reported the outbreak's first documented recovery — a patient in DRC recovered, left hospital and was discharged on 27 May.\n\n(5) TEDROS + WHO RESOURCES. Tedros 27 May: 'catastrophic collision of disease and conflict'. WHO has released US$3.9M from its Contingency Fund for Emergencies and deployed 22 international staff to the field.\n\n(5) EU/ITALY FUNDING. Italian Farnesina committed €1.15M. The EU AFRO Hub in Dakar has delivered 6.3 tonnes of supplies (PPE, medication, sample-collection kits); the EU has a €7.4M R&D blueprint agreement with WHO to fast-track trials.\n\n(6) TRAVEL-RESTRICTION WAVE (28 May sweep of national sources). Canada escalated from surveillance to a 90-day entry ban on residents of DRC/UGA/SSD (from 27 May) plus 21-day quarantine for citizens/PRs/others from 30 May, and suspended immigration documents for 90 days. The Bahamas added entry restrictions + possible quarantine (30-day, from 26 May). The US added JFK as a fourth enhanced-screening port of entry (alongside IAD/ATL/IAH). DRC suspended all flights to/from Bunia (humanitarian/medical exceptions). A broad Asia/Africa screening wave is now confirmed across Hong Kong, Malaysia, Indonesia, Vietnam, Nepal, Sri Lanka, Tanzania, Kenya and Ethiopia. ICAO and the UN urged governments to keep borders open and screen on EXIT rather than entry — placing the entry bans in tension with multilateral guidance.\n\n(7) Next ECDC / WHO daily refresh expected within 24 hours.",
@@ -763,8 +776,8 @@ const data = {
     }
   },
   critical_alert: {
-    title: "DRC rises to 381 confirmed / 64 deaths (233 in isolation); Uganda climbs to 19 cases / 2 deaths; WHO still investigating a UAE/Uganda case; Kenya block extended ~3 weeks",
-    body: "DRC confirmed cases reached 381 with 64 confirmed deaths and 233 individuals hospitalised in isolation (DRC MoH figures published 4 June; ECDC update 5 June; +18 confirmed and two further deaths). Ituri accounts for 359 of 381 across 17 health zones. Uganda has climbed to 19 confirmed cases including two deaths — the three new cases on 5 June were contacts of confirmed cases, and the death toll has doubled, underscoring sustained in-country transmission. A NEW exported-case signal is under investigation — WHO is working with Uganda and the UAE on a travel-linked case (3 Jun DG briefing), distinct from the resolved, negative Brazil/Italy scares. Uganda has since risen to 19 confirmed / 2 deaths, still showing local transmission with most known cases in Kampala. In Kenya, the High Court extended its block on the US-backed facility (reported at least three weeks) and ordered disclosure of the US deal, after the 1 Jun Nanyuki protests in which two people died. WHO reports eight recoveries (six DRC, two Uganda) and 80 treatment beds across three Bunia centres. Latest WHO DON remains DON605 (134/18, 29 May); no DON606 yet. Note: published 5 June; latest official case figures are to 3 June.",
+    title: "WHO and Africa CDC launch a US$518M joint Ebola plan as DRC warns of rapid community transmission (71 new cases in 24h); now the largest Bundibugyo outbreak on record. DRC holds at 381 / 64 (233 in isolation); Uganda 19 / 2",
+    body: "WHO and Africa CDC have launched a US$518M joint ‘One Response’ plan (5 June) covering June–November — emergency coordination, surveillance, testing, IPC, clinical care and community engagement under ‘one plan, one budget, one team’. It lands as the DRC Ministry of Health warns of ‘rapid and continuous community transmission’, reporting 71 new cases in a single 24-hour period, and as US CDC describes this as the largest Bundibugyo outbreak on record (US public risk assessed low). The latest harmonised totals are unchanged: DRC 381 confirmed, 64 confirmed deaths and 233 individuals hospitalised in isolation (DRC MoH figures published 4 June; ECDC update 5 June; +18 confirmed and two further deaths). Ituri accounts for 359 of 381 across 17 health zones. Uganda has climbed to 19 confirmed cases including two deaths — the three new cases on 5 June were contacts of confirmed cases, and the death toll has doubled, underscoring sustained in-country transmission. A NEW exported-case signal is under investigation — WHO is working with Uganda and the UAE on a travel-linked case (3 Jun DG briefing), distinct from the resolved, negative Brazil/Italy scares. Uganda has since risen to 19 confirmed / 2 deaths, still showing local transmission with most known cases in Kampala. In Kenya, the High Court extended its block on the US-backed facility (reported at least three weeks) and ordered disclosure of the US deal, after the 1 Jun Nanyuki protests in which two people died. WHO reports eight recoveries (six DRC, two Uganda) and 80 treatment beds across three Bunia centres. Latest WHO DON remains DON605 (134/18, 29 May); no DON606 yet. Note: published 5 June; latest official case figures are to 3 June.",
     modal: {
       title: "Italy MSF surgeon — full operational debrief",
       body: "― ITALY OPERATIONAL FACTS (27 May 2026) ―\nAn Italian female surgeon working with Médecins Sans Frontières (MSF) at the Salamat health centre in Bunia, Ituri (DRC) — the epicentre of the outbreak — is being repatriated under quarantine. She had direct clinical contact on 16 May with patients later confirmed positive for Bundibugyo virus, and on 18 May performed emergency life-saving surgery on a child grenade-blast victim now classified as a suspected Ebola case (test pending). She is asymptomatic; she arrives in Rome today on a specially-equipped flight authorised by the Ministero della Salute and will be placed in quarantine + active surveillance at the Istituto Nazionale per le Malattie Infettive Lazzaro Spallanzani.\n\n― OFFICIAL ITALIAN POSITION ―\nMin. della Salute: \"There are no Ebola cases in Italy. Alarm in our country remains very low.\" Italian Foreign Ministry (Farnesina) committed €1.15M to the humanitarian response in the affected DRC provinces. Lazio Region informed.\n\n― ECDC POSITION ―\nECDC states risk of infection for EU/EEA residents remains very low, but notes this outbreak \"is more challenging to control than the more commonly detected Zaire ebolavirus\" — different strain, no approved vaccine, no specific treatment.\n\n― TEDROS 27 MAY ―\nIn parallel, WHO DG published a formal statement on X today: \"Eastern DRC now faces a catastrophic collision of disease and conflict with the Ebola outbreak in Ituri province outpacing the response. Ongoing clashes are driving mass displacement, pushing exposed contacts into overcrowded camps and severing critical containment corridors. Stopping this Ebola transmission depends entirely on humanitarian access.\"\n\n― CONTEXT ON THE STRAIN ―\nBundibugyo virus is one of six known orthoebolavirus species, four of which cause Ebola disease in humans. It was first identified in 2007 after an outbreak in Uganda's Bundibugyo District, on the border with DRC. A second outbreak followed in DRC's Province Orientale in 2012 (59 cases, 34 deaths). Case-fatality rates in the two prior outbreaks ranged 30-50%.\n\nCrucially: existing licensed Ebola vaccines (Ervebo / rVSV-ZEBOV and the Janssen two-dose regimen) target the Zaire strain. Animal studies suggest only partial cross-protection against Bundibugyo. The strain was previously too rare to justify dedicated vaccine investment — a gap now being addressed urgently.\n\nThe current outbreak went undetected for several weeks because initial diagnostic tests targeted the Zaire strain and came back negative. Lab confirmation of Bundibugyo did not occur until 15 May, despite first symptoms reported on 24 April.",
@@ -1244,6 +1257,11 @@ const data = {
     }
   }],
   whats_new: [{
+    headline: "WHO and Africa CDC launch US$518M joint Ebola response plan",
+    summary: "On 5 June, WHO and Africa CDC launched a joint continental 'One Response' plan to raise US$518M over June–November 2026 — emergency coordination, surveillance, laboratory testing, infection prevention, clinical care and community engagement, with a joint financial-tracking mechanism. It builds on the DRC and Uganda national plans. The DRC MoH simultaneously warned of rapid, continuous community transmission (71 new cases in 24h); US CDC calls this the largest Bundibugyo outbreak on record.",
+    outlet: "WHO / Africa CDC / Al Jazeera",
+    url: "https://www.who.int/news/item/05-06-2026-africa-cdc-and-who-launch-joint-continental-ebola-response-plan"
+  }, {
     headline: "DRC rises to 381 / 64; Uganda climbs to 19 / 2",
     summary: "Evening update (5 June): ECDC reports DRC at 381 confirmed cases, 64 confirmed deaths and 233 individuals hospitalised in isolation (DRC MoH figures published 4 June; +18 confirmed, +2 deaths). Ituri 359 of 381 across 17 health zones. Uganda has climbed to 19 confirmed cases including two deaths \u2014 the three new cases on 5 June were contacts of confirmed cases. The doubling of Uganda's deaths and the rising contact-linked caseload point to sustained in-country transmission.",
     outlet: "ECDC",
@@ -1841,6 +1859,13 @@ const data = {
   }
 };
 const SOURCES_FOOTER = [{
+  label: "WHO/AfCDC $518M plan",
+  url: "https://www.who.int/news/item/05-06-2026-africa-cdc-and-who-launch-joint-continental-ebola-response-plan",
+  modal: {
+    title: "WHO + Africa CDC joint response plan (US$518M)",
+    body: "Launched 5 June 2026 and running June–November, the joint continental 'One Response' plan aims to raise US$518M for emergency coordination, surveillance, laboratory testing, infection prevention and control, clinical care, community engagement, research and logistics. It complements the DRC and Uganda national plans and adds a joint financial-tracking mechanism (one plan, one budget, one team)."
+  }
+}, {
   label: "WHO DON",
   url: "https://www.who.int/emergencies/disease-outbreak-news",
   modal: {
@@ -1920,6 +1945,7 @@ function clickable(extra = {}) {
     ...extra
   };
 }
+/* ===== RENDER CODE - you should not need to edit below ===== */
 function Modal({
   open,
   payload,
@@ -2024,6 +2050,7 @@ function Tile({
 }) {
   const isHovered = hover === id;
   return /*#__PURE__*/React.createElement("div", {
+    id: id,
     onClick: onClick,
     onMouseEnter: () => setHover(id),
     onMouseLeave: () => setHover(null),
@@ -3832,7 +3859,6 @@ function SectionHeader({
   }, children);
 }
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(/*#__PURE__*/React.createElement(EbolaDashboard, null));
-</script>
+root.render(/*#__PURE__*/React.createElement(EbolaDashboard, null));</script>
 </body>
 </html>
