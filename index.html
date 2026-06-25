@@ -442,8 +442,8 @@ const TIER_LEGEND = [{
    You should not need to touch the render code below the data.
    ================================================================ */
 const data = {
-  date_display: "13 June 2026, 0001 hrs Rome time",
-  date_iso: "2026-06-13",
+  date_display: "25 June 2026, 0936 hrs Rome time",
+  date_iso: "2026-06-25",
   timeline: {
     title: "Outbreak timeline",
     events: [{
@@ -570,8 +570,26 @@ const data = {
       t: "DRC government data reach 689 confirmed / 139 deaths (+119 suspected); WHO warns of 'blind spots' and near-daily new health zones; Mauritius and Taiwan add entry bans.",
       kind: "red"
     }, {
+      d: "13 Jun",
+      t: "WHO publishes DON607: 676 confirmed / 136 deaths in DRC (to 10 Jun), Uganda 19/2 (to 11 Jun), at least 37 recovered; +161 cases since 8 Jun."
+    }, {
+      d: "17 Jun",
+      t: "ECDC relay (DRC MoH data to 15 Jun): 837 confirmed / 196 deaths / 376 in isolation; Ituri 767 across 20 zones; North Kivu doubles to 67 across 10 zones; South Kivu 3.",
+      kind: "red"
+    }, {
+      d: "19 Jun",
+      t: "WHO publishes DON608: 896 confirmed / 232 deaths in DRC (to 17 Jun), Uganda 19/2, at least 88 recovered."
+    }, {
+      d: "22 Jun",
+      t: "DRC crosses 1,000 cases. ECDC (data to 22 Jun): 1,094 confirmed / 277 deaths / 387 in isolation — now the second-largest Ebola outbreak on record.",
+      kind: "red"
+    }, {
+      d: "24 Jun",
+      t: "France confirms its first imported case — a humanitarian doctor returning from DRC; isolated, contacts traced. Second export overall.",
+      kind: "red"
+    }, {
       d: "Today",
-      t: "13 June 2026, 0001 hrs Rome time — situational picture as published (latest DRC government data 12 Jun; ECDC formal relay to 9 Jun, data to 6 Jun; Uganda as of 5 Jun)",
+      t: "25 June 2026, 0936 hrs Rome time — situational picture as published (ECDC formal relay, DRC MoH data to 22 Jun; WHO DON608 to 17-18 Jun; Uganda to 18 Jun)",
       kind: "live"
     }],
     modal: {
@@ -604,8 +622,8 @@ const data = {
     }
   },
   sparkline: {
-    label: "DRC suspected vs confirmed, with Uganda — 17 May to 12 Jun",
-    dates: ["17 May", "18 May", "19 May", "20 May", "21 May", "22 May", "23 May", "24 May", "25 May", "26 May", "27 May", "28 May", "29 May", "30 May", "31 May", "01 Jun", "02 Jun", "03 Jun", "04 Jun", "05 Jun", "06 Jun", "07 Jun", "08 Jun", "09 Jun", "12 Jun"],
+    label: "DRC suspected vs confirmed, with Uganda — 17 May to 22 Jun",
+    dates: ["17 May", "18 May", "19 May", "20 May", "21 May", "22 May", "23 May", "24 May", "25 May", "26 May", "27 May", "28 May", "29 May", "30 May", "31 May", "01 Jun", "02 Jun", "03 Jun", "04 Jun", "05 Jun", "06 Jun", "07 Jun", "08 Jun", "09 Jun", "12 Jun", "15 Jun", "18 Jun", "22 Jun"],
     lines: [{
       name: "AfCDC cumulative suspected",
       who: "DRC",
@@ -614,7 +632,7 @@ const data = {
       style: "dotted",
       area: false,
       src: "AfCDC",
-      data: [300, 420, 520, 640, 760, 850, 920, 980, 1020, 1060, 1100, 1120, 1120, 1120, 1120, 1120, 1120, 1130, 1130, 1130, 1130, 1130, 1130, 1130, 1130]
+      data: [300, 420, 520, 640, 760, 850, 920, 980, 1020, 1060, 1100, 1120, 1120, 1120, 1120, 1120, 1120, 1130, 1130, 1130, 1130, 1130, 1130, 1130, 1130, 1180, 1250, 1320]
     }, {
       name: "DRC suspected (pending)",
       who: "DRC",
@@ -623,7 +641,7 @@ const data = {
       style: "dashed",
       area: false,
       src: "ECDC",
-      data: [41, 80, 134, 322, 560, 716, 820, 900, 980, 1040, 1077, 906, 906, 906, 220, 220, 220, 116, 206, 233, 283, 309, 297, 260, 260]
+      data: [41, 80, 134, 322, 560, 716, 820, 900, 980, 1040, 1077, 906, 906, 906, 220, 220, 220, 116, 206, 233, 283, 309, 297, 260, 260, 376, 380, 387]
     }, {
       name: "DRC confirmed",
       who: "DRC",
@@ -632,7 +650,7 @@ const data = {
       style: "solid",
       area: true,
       src: "ECDC · US CDC",
-      data: [8, 12, 40, 60, 80, 85, 90, 100, 105, 110, 121, 125, 125, 125, 282, 282, 321, 344, 363, 381, 515, 550, 598, 635, 689]
+      data: [8, 12, 40, 60, 80, 85, 90, 100, 105, 110, 121, 125, 125, 125, 282, 282, 321, 344, 363, 381, 515, 550, 598, 635, 689, 837, 896, 1094]
     }, {
       name: "Uganda confirmed",
       who: "Uganda",
@@ -641,10 +659,10 @@ const data = {
       style: "faint",
       area: false,
       src: "ECDC",
-      data: [2, 2, 2, 2, 2, 2, 5, 5, 7, 7, 7, 7, 9, 9, 9, 9, 9, 15, 15, 19, 19, 19, 19, 19, 19]
+      data: [2, 2, 2, 2, 2, 2, 5, 5, 7, 7, 7, 7, 9, 9, 9, 9, 9, 15, 15, 19, 19, 19, 19, 19, 19, 19, 19, 19]
     }],
     modal: {
-      title: "DRC suspected vs confirmed (with Uganda) — 17 May to 12 Jun",
+      title: "DRC suspected vs confirmed (with Uganda) — 17 May to 22 Jun",
       body: "One shared timeline showing how the DRC outbreak counts have evolved, plus Uganda for comparison.\n\n• DRC SUSPECTED (dashed blue): the pool of people meeting the case definition but awaiting a lab result. It climbed to ~1,077 by 27 May, then DROPPED — first to 906 (28-29 May, when authorities removed cases ruled out after investigation) and then to ~220 (31 May) and ~116 (2 Jun, ECDC's count of those still under investigation once confirmed cases were moved out of the pool). The fall is NOT recovery or slowing transmission — it is the suspected pile being cleared by testing and discards.\n\n• DRC CONFIRMED (solid blue, shaded): lab-positive cases. Climbed steadily, then jumped 125 → 282 (31 May) → 321 → 344 as the suspected backlog was laboratory-confirmed; confirmed deaths have risen to 60. This is the crossover the chart is built to show: as the dashed (suspected) line falls, the solid (confirmed) line rises — the same people moving from one bucket to the other.\n\n• UGANDA CONFIRMED (faint teal): rose 2 → 5 → 7 → 9 and then jumped to 15 (2 Jun, 1 death). More important than the number: Uganda now reports LOCAL transmission (about seven cases) rather than only DRC-imported ones, with eight of the known cases in Kampala. It still sits low against DRC's hundreds, but the trajectory has changed — the endpoint is labelled.\n\nIMPORTANT: two different bodies count differently. ECDC/DRC MoH report ~220 STILL-PENDING suspected; Africa CDC reports a CUMULATIVE suspected tally above 1,100 (everything ever flagged). They answer different questions and are not contradictory. Uganda does not publish a separate daily suspected count, so only its confirmed line is shown.\n\nData from WHO, US CDC, ECDC and Africa CDC bulletins.",
       sources: [{
         label: "Africa CDC",
@@ -669,17 +687,17 @@ const data = {
     warn: true,
     modal: {
       title: "Behind the numbers \u2014 how to read this tracker",
-      body: "IMPORTANT \u2014 how to read these figures, and why today\u2019s headline count understates the outbreak.\n\n\u2022 THE FLOOR FRAMING KEEPS PROVING OUT. For days the headline sat at 381 confirmed while daily sitreps signalled faster spread; it has since climbed to 689 (latest DRC government data, 12 June) \u2014 a near-doubling in under two weeks. The death toll passed 100 on 7 June and Ebola has now reached a 30,000-person displacement camp. Read the latest figure as a floor, not a ceiling: laboratory confirmation and formal relays lag the real spread, which WHO itself calls full of \u2018blind spots\u2019.\n\n\u2022 THREE SOURCES, THREE DEFINITIONS. ECDC / DRC MoH (used here) is the most current harmonised confirmed figure. WHO Disease Outbreak News is the formal IHR record and validates weekly: DON606 (8 June) now reports 515 / 91 for DRC and 19 / 2 for Uganda (data to 6 June), having caught up to the DRC MoH figures. Africa CDC is higher (cumulative suspected above 1,100), counting everything ever flagged (suspected + confirmed + discarded).\n\n\u2022 A REPORTING-BASIS CHANGE. Around 4 June ECDC switched from a \u2018suspected under investigation\u2019 count to \u2018individuals hospitalised in isolation\u2019 (now 233). Part of the rise from ~116 to 206 to 233 reflects this redefinition, not only new infections.\n\n\u2022 FIGURES ARE OFFICIAL TO THEIR DATES, NOT TO THE MINUTE YOU READ. DRC to 3 June (published 4 June); Uganda to 5 June (19 / 2). The dashboard was refreshed at 0001 hrs on 13 June; figures unchanged since the 12 June data. Latest DRC government data (12 June, via Reuters/Al Jazeera) put the outbreak at 689 confirmed / 139 deaths (+119 suspected); the latest formal ECDC relay (DRC MoH, data to 9 June) was 635 / 127 / 260 in isolation. Uganda 19 / 2. The formal IHR record is WHO DON606 (8 June, 534/93 as of 6 June). With Ebola now in a 30,000-person displacement camp and WHO citing \u2018blind spots\u2019, the true caseload is materially above the reported figure. CDC modelling (MMWR, 6 June) projects a 65% chance of exceeding 20,000 cases within three months under poor isolation — so even 515 should be read as a floor.\n\n\u2022 HOW TO READ THE CHART. The solid line is confirmed cases (firmest); the dashed line tracks suspected / in-isolation; the dotted amber line is Africa CDC\u2019s cumulative suspected. Endpoint chips name each figure\u2019s source and date.\n\nBottom line: ECDC / DRC MoH = most current confirmed; WHO DON = lags but is the formal IHR record; Africa CDC = widest cumulative. The real caseload sits at or above the ECDC confirmed figure \u2014 and given the 71-in-24h signal, materially above it right now."
+      body: "IMPORTANT \u2014 how to read these figures, and why today\u2019s headline count understates the outbreak.\n\n\u2022 THE FLOOR FRAMING KEEPS PROVING OUT. The headline has climbed from 381 confirmed in early June to 1,094 (ECDC, data to 22 June) — the outbreak has crossed 1,000 cases and is now the second-largest on record, with 277 deaths and a CFR near 25%. WHO says it continues to outpace the response. With contact tracing inadequate, Ebola in displacement camps and now a confirmed export to France, read every figure as a floor: laboratory confirmation and formal relays lag the real spread.\n\n\u2022 THREE SOURCES, THREE DEFINITIONS. ECDC / DRC MoH (used here) is the most current harmonised confirmed figure. WHO Disease Outbreak News is the formal IHR record and validates weekly: DON606 (8 June) now reports 515 / 91 for DRC and 19 / 2 for Uganda (data to 6 June), having caught up to the DRC MoH figures. Africa CDC is higher (cumulative suspected above 1,100), counting everything ever flagged (suspected + confirmed + discarded).\n\n\u2022 A REPORTING-BASIS CHANGE. Around 4 June ECDC switched from a \u2018suspected under investigation\u2019 count to \u2018individuals hospitalised in isolation\u2019 (now 233). Part of the rise from ~116 to 206 to 233 reflects this redefinition, not only new infections.\n\n\u2022 FIGURES ARE OFFICIAL TO THEIR DATES, NOT TO THE MINUTE YOU READ. DRC to 3 June (published 4 June); Uganda to 5 June (19 / 2). The dashboard was refreshed at 0001 hrs on 13 June; figures unchanged since the 12 June data. Latest DRC government data (12 June, via Reuters/Al Jazeera) put the outbreak at 689 confirmed / 139 deaths (+119 suspected); the latest formal ECDC relay (DRC MoH, data to 9 June) was 635 / 127 / 260 in isolation. Uganda 19 / 2. The formal IHR record is WHO DON606 (8 June, 534/93 as of 6 June). With Ebola now in a 30,000-person displacement camp and WHO citing \u2018blind spots\u2019, the true caseload is materially above the reported figure. CDC modelling (MMWR, 6 June) projects a 65% chance of exceeding 20,000 cases within three months under poor isolation — so even 515 should be read as a floor.\n\n\u2022 HOW TO READ THE CHART. The solid line is confirmed cases (firmest); the dashed line tracks suspected / in-isolation; the dotted amber line is Africa CDC\u2019s cumulative suspected. Endpoint chips name each figure\u2019s source and date.\n\nBottom line: ECDC / DRC MoH = most current confirmed; WHO DON = lags but is the formal IHR record; Africa CDC = widest cumulative. The real caseload sits at or above the ECDC confirmed figure \u2014 and given the 71-in-24h signal, materially above it right now."
     }
   }, {
     id: "drc_cases",
-    value: "689",
+    value: "1,094",
     label: "DRC confirmed",
-    delta: "latest DRC government data, 12 Jun (Reuters/Al Jazeera); +119 suspected. ECDC formal relay 635 (data to 9 Jun); Ituri 600 across 18 zones (Tchomia new); NK 32; SK 3",
+    delta: "ECDC formal relay, DRC MoH data to 22 Jun; crossed 1,000 \u2014 now the 2nd-largest Ebola outbreak on record. 387 in isolation; Ituri 997 across 22 zones; North Kivu 94 across 11 zones; South Kivu 3",
     warn: true,
     modal: {
-      title: "DRC case count — 689 reported (12 Jun) + why the sources differ",
-      body: "Latest DRC government data (12 June, via Reuters and Al Jazeera): 689 confirmed cases, 139 confirmed deaths, plus 119 suspected. The most recent formal ECDC relay (DRC MoH published 10 June, data to 9 June) recorded 635 confirmed / 127 deaths / 260 hospitalised in isolation. Ituri is the epicentre \u2014 600 confirmed across 18 health zones (the newly affected zone of Tchomia added); North Kivu 32; South Kivu 3.\n\n\u26A0 WHY THE NUMBERS DIFFER ACROSS SOURCES \u2014 three counts, three definitions:\n\u2022 DRC MoH / ECDC (used here): the most current figure \u2014 689 reported 12 June (wire-relayed); 635 in the last formal ECDC relay (to 9 June).\n\u2022 WHO Disease Outbreak News: lower and older \u2014 DON606 (8 June) recorded 534 confirmed / 93 deaths as of 6 June, because WHO validates weekly via the IHR process and deliberately lags; no DON607 yet.\n\u2022 Africa CDC: the widest cumulative, counting suspected + confirmed + discarded (above 1,100).\n\nBottom line: the reported total is a floor, not a ceiling \u2014 with Ebola now in a 30,000-person displacement camp and WHO citing \u2018blind spots\u2019, the true caseload is materially higher.",
+      title: "DRC case count — 1,094 (ECDC, data to 22 Jun); crossed 1,000 + why sources differ",
+      body: "The latest formal relay (ECDC, DRC MoH data to 22 June) records 1,094 confirmed cases, 277 confirmed deaths and 387 people hospitalised in isolation. The outbreak has crossed 1,000 cases and is now the second-largest Ebola outbreak on record — and the largest ever by case count in its first month. Ituri holds 997 across 22 health zones; North Kivu 94 across 11 zones; South Kivu 3. CFR is about 25%.\n\n\u26A0 WHY THE NUMBERS DIFFER ACROSS SOURCES:\n\u2022 ECDC / DRC MoH (used here): the most current cumulative — 1,094 confirmed (to 22 June).\n\u2022 WHO Disease Outbreak News: lower and older — DON608 (19 June) recorded 896 confirmed / 232 deaths in DRC as of 17 June, because WHO validates weekly and deliberately lags.\n\u2022 Africa CDC: the widest cumulative, counting suspected + confirmed + discarded.\n\nBottom line: the reported total is a floor, not a ceiling. WHO says the outbreak continues to outpace the response, with contact tracing inadequate and treatment capacity insufficient, so the true caseload is materially higher.",
       sources: [{
         label: "ECDC outbreak page",
         url: "https://www.ecdc.europa.eu/en/ebola-virus-disease-outbreak-democratic-republic-congo-and-uganda"
@@ -693,13 +711,13 @@ const data = {
     }
   }, {
     id: "drc_deaths",
-    value: "139 confirmed",
+    value: "277 confirmed",
     label: "DRC confirmed deaths",
-    delta: "latest DRC government data, 12 Jun (Reuters/Al Jazeera); CFR ~20.2% (139/689). ECDC formal relay 127 (data to 9 Jun)",
+    delta: "ECDC formal relay, data to 22 Jun; CFR ~25.3% (277/1,094). WHO DON608 (to 17 Jun): 232 in DRC",
     warn: true,
     modal: {
-      title: "DRC fatality count — 139 deaths (12 Jun); CFR ~20%",
-      body: "139 confirmed deaths in DRC per the latest government data (12 June, via Reuters/Al Jazeera), up from 127 in the last formal ECDC relay (data to 9 June) and 91 a week earlier — a case-fatality ratio of roughly 20% among confirmed cases. The death toll passed 100 on 7 June. True CFR remains uncertain while cases are still being confirmed and many suspected deaths remain under investigation; Africa CDC separately cites a far larger suspected-death toll. Significant under-reporting remains likely given conflict-affected access in Ituri and North Kivu, and the disease has now reached displacement camps. DG Tedros earlier described a 'catastrophic collision of disease and conflict'.",
+      title: "DRC fatality count — 277 deaths (to 22 Jun); CFR ~25%",
+      body: "277 confirmed deaths in DRC as of 22 June (ECDC relay of DRC MoH data), up from 196 a week earlier — a case-fatality ratio of roughly 25% among confirmed cases. WHO DON608 (19 June) recorded 232 deaths in DRC as of 17 June. True CFR remains uncertain while cases are still being confirmed and many suspected deaths remain under investigation. WHO's Director-General says the outbreak continues to outpace the response — contact tracing is inadequate, treatment capacity insufficient, and safe burials remain a major challenge — and Africa CDC has warned this could become the worst Ebola outbreak ever.",
       sources: [{
         label: "ECDC outbreak page",
         url: "https://www.ecdc.europa.eu/en/ebola-virus-disease-outbreak-democratic-republic-congo-and-uganda"
@@ -727,13 +745,13 @@ const data = {
     }
   }, {
     id: "recoveries",
-    value: "17",
+    value: "88",
     label: "Recovered & discharged",
-    delta: "\u226517 recovered (WHO DON606, to 6 Jun); ~250 isolation beds across 3 provinces. Containment holding abroad: US-doctor export & Italy MSF surgeon both cleared",
+    delta: "\u226588 recovered (WHO DON608, to 17-18 Jun: 78 DRC, 10 Uganda); 387 in isolation. NOTE: France confirmed an imported case on 24 Jun (2nd export overall)",
     warn: false,
     modal: {
-      title: "Recoveries — at least 17 (WHO DON606, to 6 Jun)",
-      body: "WHO Disease Outbreak News 606 (8 June) reported that at least 17 people have recovered from Bundibugyo virus disease as of 6 June, up from the eight (six DRC, two Uganda) confirmed in early June; the first discharges in Bunia were four nurses and a laboratory worker infected in the line of duty.\n\nWhy it matters: there is no licensed vaccine or specific treatment for the Bundibugyo strain, so survival depends on early supportive care (fluids, electrolytes, treatment of complications). Recoveries show the disease is survivable with timely care and counter the fear driving community resistance. Containment abroad is also holding: the one confirmed export \u2014 a US doctor treated at Charit\u00e9 Berlin \u2014 recovered and was discharged on 6 June, and the MSF surgeon monitored in Italy cleared observation on 8 June with no symptoms.\n\nThe central constraint remains isolation capacity: WHO reports only about 250 isolation beds across the three affected provinces.",
+      title: "Recoveries — at least 88 (WHO DON608, to 17-18 Jun)",
+      body: "WHO Disease Outbreak News 608 (19 June) reported that at least 88 people have recovered from Bundibugyo virus disease (78 in DRC, 10 in Uganda) as of 17–18 June, up from 37 the previous week; 387 people were in hospital isolation as of 22 June.\n\nWhy it matters: there is still no licensed vaccine or treatment for the Bundibugyo strain. WHO SAGE does not recommend the Zaire-only Ervebo vaccine outside research, but clinical trials are now starting — Mapp Biopharmaceutical's MBP134 monoclonal antibody and Gilead's remdesivir as treatments, and obeldesivir as a potential preventive — led by DRC, Uganda and Africa CDC with France's ANRS. Survival still depends on early supportive care.\n\nExports: the US doctor treated in Germany recovered and was discharged on 6 June; France confirmed a second imported case (a humanitarian doctor) on 24 June, now isolated with contacts being traced.",
       sources: [{
         label: "CNN / WHO",
         url: "https://www.cnn.com/2026/06/01/africa/ebola-recoveries-hope-drc-intl"
@@ -747,7 +765,7 @@ const data = {
     warn: true,
     modal: {
       title: "Country tracking scope — 37 states, 6 tiers",
-      body: "37 states tracked across six response tiers. Hard entry bans now include the USA, Canada, Bahrain, Jordan, the Bahamas, the UAE (from 6 June), Mauritius and Taiwan. Border or route closures: Rwanda (land), Uganda and DRC (regional flights). Enhanced screening spans much of Asia and parts of Europe (Italy, Thailand, India, Japan, South Korea, China, Singapore and others); surveillance in the UK and Belgium; monitoring elsewhere; coordinated preparedness across the EU/EEA. Several time-bound bans face review or expiry in mid-to-late June (US around 17-18 June; Bahrain and Jordan 19 June; Bahamas around 25 June).",
+      body: "37 states tracked across six response tiers. Hard entry bans now include the USA, Canada, Bahrain, Jordan, the Bahamas, the UAE (from 6 June), Mauritius and Taiwan. Border or route closures: Rwanda (land), Uganda and DRC (regional flights). Enhanced screening spans much of Asia and parts of Europe (Italy, Thailand, India, Japan, South Korea, China, Singapore and others); surveillance in the UK and Belgium; monitoring elsewhere; coordinated preparedness across the EU/EEA. Time-bound measures have moved: the US 30-day order was renewed on 21 June (next review mid-July); Bahrain and Jordan measures reached their stated expiry around 19-20 June, with extension or lifting not yet confirmed; the Bahamas order is around 25 June. No new ban countries; France has recorded an imported case but imposed no entry ban.",
       sources: [{
         label: "Full tier matrix and source links available below",
         url: "#"
@@ -794,10 +812,10 @@ const data = {
   },
   what_changed: {
     title: "What changed in the last 24 hours",
-    items: ["OUTBREAK ENTERS A MORE DANGEROUS PHASE: Ebola has reached the Kpangba/Kpanga displacement camp in Ituri (~30,000 displaced) with two confirmed Ebola deaths (UNHCR, 11 June). Crowded camps carry a high risk of rapid spread.", "DRC GOVERNMENT DATA now 689 confirmed / 139 deaths (12 June, via Reuters/Al Jazeera), plus 119 suspected; CFR ~20%. ECDC formal relay (to 9 June) was 635 / 127 / 260 in isolation; Ituri 600 across 18 health zones (Tchomia newly affected).", "WHO WARNS OF 'BLIND SPOTS': cases appearing in new health zones near-daily; true spread likely wider than official counts; only ~250 isolation beds across the three provinces (WHO epidemiology head, 12 June).", "NEW ENTRY BANS: Mauritius and Taiwan have barred entry for travellers linked to the DRC, Uganda and South Sudan, joining the UAE (6 June).", "SHARP ESCALATION: DRC jumps to 515 confirmed / 91 deaths / 283 in isolation as of 6 June (DRC MoH publ. 7 June; WHO DON606, 8 June) — +134 confirmed and +27 deaths since 5 June. Ituri 487 of 515 (17 zones); North Kivu 25; South Kivu 3. CFR ~17.7%.", "WHO DON606 PUBLISHED (8 June) — the formal IHR record has caught up, confirming 515 / 91 in DRC and 19 / 2 (plus one probable death) in Uganda.", "UAE BARS ENTRY (from 6 June): new visas suspended and entry denied for travellers from DRC, Uganda and South Sudan, including via transit; 21-day exemption; cargo continues (NCEMA / ICP).", "CDC MODELLING (MMWR, 6 June) projects a 65% chance the outbreak exceeds 20,000 cases within three months under poor (20%) isolation; with 70% isolation only ~1 in 20 simulations exceed 10,000 — isolation and treatment change the trajectory. Likely spillover mid-to-late February 2026; already the largest known Bundibugyo outbreak.", "WHO + AFRICA CDC LAUNCH a US$518M joint 'One Response' plan (5 June), covering June–November — a single costed, time-bound continental plan (emergency coordination, surveillance, testing, IPC, clinical care, community engagement) built on the DRC and Uganda national plans. Africa CDC DG Kaseya: 'Ebola moves fast. Africa must move faster.'", "DRC WARNS of 'rapid and continuous community transmission' — its latest sitrep reports 71 new cases in a 24-hour period. The harmonised cumulative (381) has not yet been superseded in ECDC, but the daily signal points to acceleration; US CDC now calls this the largest Bundibugyo outbreak on record.", "DRC holds at 381 confirmed / 64 deaths — DRC MoH figures published 4 June (ECDC update 5 June); +18 confirmed and two further deaths. 233 individuals now hospitalised in isolation (up from 206). Ituri 359 of 381 (17 health zones); North Kivu 19; South Kivu 3", "NEW exported-case signal: WHO is working with Uganda and the UAE on a travel-linked case under investigation (3 Jun DG briefing) — distinct from the resolved, all-negative Brazil and Italy scares. WHO also reports eight recoveries (six DRC, two Uganda) and 80 treatment beds in Bunia", "KENYA: the High Court extended its block on the US-backed facility (reported at least three weeks) and ordered disclosure of the US deal; President Ruto: 'When President Trump asked... I gave the okay.' Uganda has risen to 19/2 with continued local transmission", "WHO DON gap persists: DON605 (134/18, 29 May) is still the latest — no DON606 has appeared — now far below ECDC's 381 because WHO publishes weekly and validates via IHR", "EU Health Ministers hold their informal videoconference on the outbreak TODAY (5 June); exported-case scares in Brazil and Italy remain NEGATIVE"],
+    items: ["DRC CROSSES 1,000 CASES \u2014 now the second-largest Ebola outbreak on record. ECDC (DRC MoH data to 22 June): 1,094 confirmed / 277 deaths / 387 in isolation; CFR ~25%.", "FIRST CASE IN FRANCE (24 June): a humanitarian doctor returning from DRC tested positive \u2014 the first case on European soil this outbreak; isolated on arrival, contacts traced. Second export overall after the US doctor treated in Germany, who has recovered.", "NORTH KIVU EXPANDS: 94 confirmed across 11 health zones; Ituri remains the epicentre with 997 across 22 zones; South Kivu 3.", "WHO DON608 (19 June): 896 confirmed / 232 deaths in DRC and 19 / 2 in Uganda, with at least 88 recovered; +220 cases and +96 deaths since 13 June, partly from scaled-up testing.", "THERAPEUTIC TRIALS STARTING: Mapp's MBP134 monoclonal antibody and Gilead's remdesivir (treatment) and obeldesivir (prevention), led by DRC, Uganda and Africa CDC with France's ANRS \u2014 still no licensed vaccine or treatment for the Bundibugyo strain.", "TRAVEL: the US 30-day order was renewed on 21 June (next review mid-July); Bahrain and Jordan measures reached their stated expiry around 19\u201320 June (extension or lifting not yet confirmed); no new ban countries."],
     modal: {
-      title: "Operational delta — 13 June 2026 (0001 hrs)",
-      body: "13 JUNE (0001 hrs Rome) — edition timestamp only; no new official figures have been released overnight, so the picture below remains that of 12 June: latest DRC government data via Reuters/Al Jazeera, with the last formal ECDC relay to 9 June.\n\n(A) DISPLACEMENT-CAMP SPREAD. Ebola has reached the Kpangba/Kpanga camp in Ituri (~30,000 displaced); UNHCR confirmed two Ebola deaths there on 11 June (deaths ~31 May–1 June). Crowded camps with shared sanitation carry a high risk of rapid transmission — the outbreak is assessed to be entering a more dangerous phase.\n\n(B) BLIND SPOTS + CAPACITY GAP. A senior WHO official (Olivier le Polain) said on 12 June there are many 'blind spots', with new health zones affected near-daily and the true spread likely wider than official counts. Only ~250 isolation beds exist across the three provinces.\n\n(C) FIGURES. DRC government data now 689 confirmed / 139 deaths (+119 suspected; CFR ~20%). The last formal ECDC relay (DRC MoH publ. 10 June, data to 9 June) recorded 635 / 127 / 260 in isolation; Ituri 600 across 18 health zones (Tchomia newly affected); North Kivu 32; South Kivu 3. WHO DON606 (8 June, 534/93 to 6 June) remains the formal IHR record; no DON607 yet.\n\n(D) TRAVEL. Mauritius and Taiwan added entry bans for travellers linked to DRC/Uganda/South Sudan, joining the UAE (6 June). US Title 42 review around 17–18 June; Bahrain and Jordan expire 19 June; Bahamas around 25 June.\n\n(E) CONTAINMENT ABROAD HOLDING. The one confirmed export (US doctor, Charité Berlin) recovered and was discharged 6 June; the Italy MSF surgeon cleared observation 8 June. At least 17 recoveries reported (WHO DON606).",
+      title: "Operational delta — 25 June 2026 (0936 hrs)",
+      body: "25 JUNE (0936 hrs Rome) — figures updated to the latest formal relay; WHO DON608 now published; first case in France.\n\n(A) MILESTONE. The DRC outbreak has crossed 1,000 cases and is now the second-largest Ebola outbreak on record. ECDC (DRC MoH data to 22 June): 1,094 confirmed / 277 deaths / 387 in isolation; CFR ~25%. Ituri 997 across 22 health zones; North Kivu 94 across 11 zones; South Kivu 3.\n\n(B) FIRST CASE IN FRANCE. On 24 June France confirmed its first imported case — a humanitarian doctor returning from DRC, isolated on arrival with contacts traced (21-day self-isolation). Second export overall; the US doctor treated in Germany has recovered. ECDC rates general-EU risk very low.\n\n(C) WHO IHR RECORD. DON608 (19 June): 896 confirmed / 232 deaths in DRC (to 17 June), 19/2 Uganda (to 18 June), at least 88 recovered; +220 cases and +96 deaths since 13 June.\n\n(D) RESPONSE & THERAPEUTICS. WHO says the response is still outpaced (tracing inadequate, treatment capacity short); Africa CDC warns of the worst-ever risk. Trials starting: Mapp's MBP134, Gilead's remdesivir (treatment) and obeldesivir (prevention) — still no licensed countermeasure.\n\n(E) TRAVEL. US 30-day order renewed 21 June (next review mid-July). Bahrain and Jordan measures reached expiry ~19–20 June; extension/lift unconfirmed. No new ban countries. Uganda holds at 19 / 2.",
       sources: [{
         label: "Al Jazeera: Tedros catastrophic collision",
         url: "https://www.aljazeera.com/news/2026/5/27/drc-facing-catastrophic-collision-of-ebola-and-war-who-chief-warns"
@@ -808,20 +826,20 @@ const data = {
     }
   },
   critical_alert: {
-    title: "Outbreak enters a more dangerous phase: Ebola reaches a 30,000-person displacement camp in Ituri (two confirmed deaths). DRC government data now 689 confirmed / 139 deaths (12 Jun); WHO warns of ‘blind spots’ and near-daily new health zones. Mauritius and Taiwan add entry bans. Uganda 19 / 2",
-    body: "Ebola has reached the Kpangba (Kpanga) displacement camp in Ituri — home to about 30,000 internally displaced people — where UNHCR confirmed two Ebola-related deaths on 11 June (the deaths occurred around 31 May–1 June). Aid workers warn transmission can move fast in crowded camps, and a senior WHO official (Olivier le Polain, head of epidemiology) cautioned on 12 June that there are many ‘blind spots’, with cases being identified in new health zones on a near-daily basis and the true spread likely wider than official counts; only about 250 isolation beds exist across the three affected provinces. Latest DRC government data (12 June, via Reuters and Al Jazeera) put the outbreak at 689 confirmed cases and 139 deaths, with a further 119 suspected — a case-fatality rate around 20%. The latest formal ECDC relay (DRC MoH published 10 June, data to 9 June) recorded 635 confirmed / 127 deaths / 260 in isolation, with Ituri at 600 confirmed across 18 health zones (the newly affected zone of Tchomia added); North Kivu 32; South Kivu 3. On travel, Mauritius and Taiwan have added entry bans for travellers linked to the DRC, Uganda and South Sudan, joining the UAE (6 June). The formal IHR record remains WHO DON606 (8 June, 534/93 as of 6 June); no DON607 yet. Treat the figures as a floor.",
+    title: "DRC crosses 1,000 cases \u2014 now the 2nd-largest Ebola outbreak on record: 1,094 confirmed / 277 deaths as of 22 June (CFR ~25%). WHO says the response is still being outpaced. France confirms a first imported case (24 June). WHO DON608 (19 June): 896/232 in DRC, \u226588 recovered. Uganda 19 / 2",
+    body: "The latest formal relay (ECDC, DRC MoH data to 22 June) records 1,094 confirmed cases, 277 deaths and 387 in isolation \u2014 CFR ~25%, up from 837/196 a week earlier. The outbreak has crossed 1,000 cases and is now the second-largest on record. Ituri holds 997 across 22 health zones; North Kivu 94 across 11 zones; South Kivu 3. France confirmed its first imported case on 24 June (a humanitarian doctor returning from DRC, now isolated; contacts tracing) \u2014 the second export overall after the US doctor treated in Germany, who has recovered. WHO's Director-General says contact tracing is inadequate and treatment capacity insufficient; Africa CDC warns this could become the worst Ebola outbreak ever. No licensed vaccine/treatment exists, though MBP134, remdesivir and obeldesivir trials are starting. Treat the figures as a floor.",
     modal: {
-      title: "Operational debrief — outbreak enters a more dangerous phase (12 June)",
-      body: "― OPERATIONAL DEBRIEF (13 June 2026, 0001 hrs) ―\nThe outbreak has entered a more dangerous phase. Ebola has reached the Kpangba/Kpanga displacement camp in Ituri, which hosts about 30,000 internally displaced people; UNHCR confirmed two Ebola-related deaths there on 11 June (the deaths occurred around 31 May–1 June). Crowded camps, where hundreds may share a single latrine, carry a high risk of rapid transmission.\n\n― WHO WARNING ―\nA senior WHO official (Olivier le Polain, head of epidemiology) said on 12 June the response faces many 'blind spots', with cases identified in new health zones on a near-daily basis and the true spread likely wider than official counts. Only about 250 isolation beds exist across the three affected provinces — the binding capacity constraint.\n\n― FIGURES ―\nLatest DRC government data (12 June, via Reuters/Al Jazeera): 689 confirmed, 139 deaths, plus 119 suspected (CFR ~20%). Last formal ECDC relay (DRC MoH publ. 10 June, data to 9 June): 635 / 127 / 260 in isolation; Ituri 600 across 18 health zones (Tchomia newly affected); North Kivu 32; South Kivu 3. WHO DON606 (8 June, 534/93 to 6 June) is the formal IHR record; no DON607 yet.\n\n― TRAVEL ―\nMauritius and Taiwan have added entry bans, joining the UAE (6 June). The US 30-day Title 42 order comes up for review around 17–18 June.\n\n― CONTEXT ON THE STRAIN ―\nBundibugyo virus has no licensed vaccine or specific treatment; prior outbreaks (2007 Uganda, 2012 DRC) had case-fatality rates of 25–50%. This is now by far the largest Bundibugyo outbreak on record.",
+      title: "Operational debrief \u2014 DRC crosses 1,000 cases; first case in France (25 June)",
+      body: "\u2015 SITUATION (25 June 2026, 0936 hrs) \u2015\nECDC (DRC MoH data to 22 June) records 1,094 confirmed cases, 277 deaths and 387 hospitalised in isolation \u2014 CFR ~25%, up from 837/196 a week earlier. The outbreak has crossed 1,000 cases and is the second-largest Ebola outbreak on record (and the largest ever by first-month case count). Ituri 997 across 22 health zones; North Kivu 94 across 11 zones; South Kivu 3.\n\n\u2015 EXPORTS / EU \u2015\nFrance confirmed its first imported case on 24 June: a humanitarian doctor who worked in an active-transmission area of DRC, isolated on arrival and treated under biosafety protocols; contacts are being traced and asked to self-isolate for 21 days. ECDC assesses the risk to the general EU/EEA population as very low. This is the second export overall \u2014 the US doctor treated at Charit\u00e9 Berlin recovered and was discharged on 6 June.\n\n\u2015 WHO IHR RECORD \u2015\nDON608 (19 June) recorded 896 confirmed / 232 deaths in DRC (to 17 June) and 19/2 in Uganda (to 18 June), with at least 88 recoveries; +220 cases and +96 deaths since 13 June, partly from scaled-up testing.\n\n\u2015 RESPONSE \u2015\nWHO's Director-General says the outbreak continues to outpace the response: contact tracing inadequate, treatment capacity insufficient, safe burials a major challenge. Africa CDC warns it could be the worst ever. There is no licensed vaccine or treatment, but trials are starting \u2014 Mapp's MBP134 monoclonal and Gilead's remdesivir (treatment) and obeldesivir (prevention), led by DRC, Uganda and Africa CDC with France's ANRS.\n\n\u2015 TRAVEL \u2015\nThe US 30-day entry order was renewed on 21 June (next review mid-July). Bahrain and Jordan measures reached their stated expiry around 19\u201320 June; extension or lifting is not yet confirmed. No new ban countries.",
       sources: [{
-        label: "Al Jazeera: spreads into new areas",
-        url: "https://www.aljazeera.com/news/2026/6/12/alarm-as-ebola-spreads-into-new-areas-of-dr-congo"
-      }, {
         label: "ECDC outbreak page",
         url: "https://www.ecdc.europa.eu/en/ebola-outbreak-democratic-republic-congo-and-uganda"
       }, {
-        label: "WHO DON606",
-        url: "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON606"
+        label: "WHO DON608",
+        url: "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON608"
+      }, {
+        label: "Al Jazeera (France first case)",
+        url: "https://www.aljazeera.com/news/2026/6/24/france-confirms-first-ebola-case-in-doctor-returning-from-dr-congo"
       }]
     }
   },
@@ -831,7 +849,7 @@ const data = {
     short: "Entry ban",
     modal: {
       title: "United States — Title 42 entry ban + POE routing",
-      body: "30-day Title 42 entry ban extended to LPRs via HHS revision of 42 CFR 71.40 on 22 May (departure from precedent). State Dept Level 4 'Do Not Travel'. ALL U.S.-bound passengers (incl. US citizens & LPRs) recently in DRC/UGA/SSD must enter only through IAD (eff. 21 May), ATL (eff. 22 May), IAH (eff. 26 May 23:59) — and now JFK (added by CDC 28 May). Enhanced POE screening + 21-day post-arrival symptom monitoring. State Dept paused certain visa operations.",
+      body: "30-day Title 42 entry ban extended to LPRs via HHS revision of 42 CFR 71.40 on 22 May (departure from precedent). State Dept Level 4 'Do Not Travel'. ALL U.S.-bound passengers (incl. US citizens & LPRs) recently in DRC/UGA/SSD must enter only through IAD (eff. 21 May), ATL (eff. 22 May), IAH (eff. 26 May 23:59) — and now JFK (added by CDC 28 May). Enhanced POE screening + 21-day post-arrival symptom monitoring. State Dept paused certain visa operations. The 30-day order was renewed on 21 June 2026 and remains in effect; next review mid-July.",
       sources: [{
         label: "US CDC",
         url: "https://www.cdc.gov/ebola/situation-summary/title-42-order.html"
@@ -849,7 +867,7 @@ const data = {
     short: "Entry ban",
     modal: {
       title: "Bahrain — entry suspension",
-      body: "Suspension of entry for non-Bahrainis arriving from South Sudan, DRC, Uganda — covers anyone present there in past 30 days. Bahrainis subject to health protocols on arrival. 30-day reviewable measure. Effective 19 May 2026.",
+      body: "Suspension of entry for non-Bahrainis arriving from South Sudan, DRC, Uganda — covers anyone present there in past 30 days. Bahrainis subject to health protocols on arrival. 30-day reviewable measure. Effective 19 May 2026. The stated 30-day window (from 19 May) reached its expiry around 19 June; extension or lifting is not yet confirmed.",
       sources: [{
         label: "Civil Aviation Affairs",
         url: "https://www.caa.gov.bh"
@@ -861,7 +879,7 @@ const data = {
     short: "Entry ban",
     modal: {
       title: "Jordan — entry suspension",
-      body: "Suspension of entry for foreign travellers arriving from DRC and Uganda. Jordanian citizens exempt. Effective 19 May 2026.",
+      body: "Suspension of entry for foreign travellers arriving from DRC and Uganda. Jordanian citizens exempt. Effective 19 May 2026. The measure reached its stated expiry around 19\u201320 June; extension or lifting is not yet confirmed.",
       sources: [{
         label: "Petra News Agency",
         url: "https://petra.gov.jo"
@@ -873,7 +891,7 @@ const data = {
     short: "Entry restrict",
     modal: {
       title: "Bahamas — entry restrictions + screening (new, 26 May)",
-      body: "Entry restrictions took immediate effect 26 May for a 30-day period (reviewable by the health ministry). Enhanced health screenings and possible quarantine for foreigners who were present in DRC, Uganda or South Sudan within 30 days of arriving. The Bahamian Ministry of Foreign Affairs advised nationals to avoid all travel to DRC, South Sudan and Uganda. No Ebola cases reported in the Bahamas.",
+      body: "Entry restrictions took immediate effect 26 May for a 30-day period (reviewable by the health ministry). Enhanced health screenings and possible quarantine for foreigners who were present in DRC, Uganda or South Sudan within 30 days of arriving. The Bahamian Ministry of Foreign Affairs advised nationals to avoid all travel to DRC, South Sudan and Uganda. No Ebola cases reported in the Bahamas. The 30-day window (from 26 May) is at its review point around 25 June.",
       sources: [{
         label: "Reuters / US News",
         url: "https://www.usnews.com/news/world/articles/2026-05-26/canada-imposes-ebola-related-travel-ban-as-bahamas-plans-similar-move"
@@ -1304,6 +1322,31 @@ const data = {
     }
   }],
   whats_new: [{
+    headline: "DRC crosses 1,000 cases — now the second-largest Ebola outbreak on record",
+    summary: "ECDC (DRC MoH data to 22 June): 1,094 confirmed cases, 277 deaths and 387 in hospital isolation; CFR ~25%. Ituri 997 across 22 health zones; North Kivu 94 across 11 zones; South Kivu 3. CDC notes the outbreak has surpassed 1,000 confirmed cases and has grown faster than any previous Ebola outbreak. WHO says the response continues to be outpaced.",
+    outlet: "ECDC / DRC MoH / CDC",
+    url: "https://www.ecdc.europa.eu/en/ebola-outbreak-democratic-republic-congo-and-uganda"
+  }, {
+    headline: "France confirms its first imported case (24 June)",
+    summary: "French health authorities confirmed a humanitarian doctor returning from the DRC tested positive for Ebola — the first case on European soil this outbreak. The patient was isolated on arrival and is treated under biosafety protocols; contacts are being traced and asked to self-isolate for 21 days. ECDC assesses the risk to the general EU population as very low. It is the second export overall, after the US doctor treated in Germany who has recovered.",
+    outlet: "Al Jazeera / Euronews / ECDC",
+    url: "https://www.aljazeera.com/news/2026/6/24/france-confirms-first-ebola-case-in-doctor-returning-from-dr-congo"
+  }, {
+    headline: "WHO DON608 published; therapeutic trials starting",
+    summary: "DON608 (19 June): 896 confirmed / 232 deaths in DRC (to 17 June), 19/2 in Uganda, at least 88 recovered; +220 cases and +96 deaths since 13 June. Clinical trials are beginning for Mapp's MBP134 monoclonal antibody and Gilead's remdesivir (treatment) and obeldesivir (prevention), led by DRC, Uganda and Africa CDC with France's ANRS. There is still no licensed vaccine or treatment for the Bundibugyo strain.",
+    outlet: "WHO DON608 / Reuters",
+    url: "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON608"
+  }, {
+    headline: "DRC outbreak reaches 837 confirmed / 196 deaths; North Kivu cases double",
+    summary: "The latest formal relay (ECDC, DRC MoH data to 15 June, published 17 June) records 837 confirmed cases, 196 deaths and 376 people in hospital isolation — a case-fatality ratio around 23%, up from 689/139 a week earlier. Ituri holds 767 cases across 20 health zones; North Kivu has doubled to 67 across 10 zones; South Kivu 3. Contact tracing is running at only about 45%, well below the level needed to get ahead of transmission.",
+    outlet: "ECDC / DRC MoH",
+    url: "https://www.ecdc.europa.eu/en/ebola-outbreak-democratic-republic-congo-and-uganda"
+  }, {
+    headline: "WHO DON607 confirms the surge; at least 37 recovered",
+    summary: "WHO Disease Outbreak News 607 (published ~13 June) recorded 676 confirmed cases and 136 deaths in DRC as of 10 June, and 19 confirmed / 2 deaths in Uganda as of 11 June, with at least 37 people recovered. An additional 161 confirmed cases and 45 deaths were reported since 8 June, partly reflecting scaled-up testing and diagnostics. There is still no licensed vaccine or treatment for the Bundibugyo strain; WHO SAGE does not recommend the Zaire-only Ervebo vaccine outside research settings.",
+    outlet: "WHO DON607",
+    url: "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON607"
+  }, {
     headline: "Ebola reaches a 30,000-person displacement camp in Ituri — outbreak entering a more dangerous phase",
     summary: "UNHCR confirmed on 11 June that two Ebola-related deaths occurred in the Kpangba (Kpanga) displacement camp in Ituri, which hosts around 30,000 internally displaced people; the deaths are reported to have occurred around 31 May and 1 June. Aid agencies warn that crowded camps — where hundreds can share a single latrine — create a high risk of rapid transmission. A senior WHO official said on 12 June that the outbreak has many ‘blind spots’, with new health zones affected near-daily and only about 250 isolation beds across the three provinces. Latest DRC government data (12 June) put the outbreak at 689 confirmed cases and 139 deaths, with 119 more suspected.",
     outlet: "Reuters / UNHCR / Al Jazeera",
@@ -1474,7 +1517,7 @@ const data = {
     text: "DRC's 17th Ebola outbreak since 1976 — only 5 months after the previous one ended.",
     modal: {
       title: "DRC and Ebola — the recurrence pattern",
-      body: "This is DRC's 17th recorded Ebola outbreak since the virus was first identified there in 1976. The previous outbreak (Zaire strain, smaller-scale) ended only 5 months ago.\n\n― BUNDIBUGYO STRAIN — PRIOR vs CURRENT ―\n\n2007 Uganda (Bundibugyo District, first identification)\n   149 cases · 37 deaths · CFR 25%\n\n2012 DRC (Province Orientale)\n   59 cases · 34 deaths · CFR 58%\n\n2026 DRC + Uganda (CURRENT, as of 12 Jun)\n   689 confirmed (DRC) · 139 confirmed deaths · 19 confirmed / 2 deaths in Uganda · AfCDC cumulative suspected >1,100\n\nThe current outbreak is already 6× larger by case count than the 2007 Bundibugyo outbreak — and 15× larger than 2012. CFR is too early to calculate cleanly because most cases are recent and unresolved.\n\nThe Equatorial rainforest belt of north-eastern DRC sits at the intersection of three drivers — wildlife reservoirs (fruit bats), high human-bushmeat contact, and weak rural health infrastructure — which makes recurrence near-inevitable. What is different this time: the Bundibugyo strain (rare and under-studied), the speed of cross-border spread to Uganda, and the conflict overlay (active M23 and ADF operations in Nord-Kivu / Ituri) which has historically taken 6–12 months off response timelines.",
+      body: "This is DRC's 17th recorded Ebola outbreak since the virus was first identified there in 1976. The previous outbreak (Zaire strain, smaller-scale) ended only 5 months ago.\n\n― BUNDIBUGYO STRAIN — PRIOR vs CURRENT ―\n\n2007 Uganda (Bundibugyo District, first identification)\n   149 cases · 37 deaths · CFR 25%\n\n2012 DRC (Province Orientale)\n   59 cases · 34 deaths · CFR 58%\n\n2026 DRC + Uganda (CURRENT, as of 22 Jun)\n   1,094 confirmed (DRC) · 277 confirmed deaths · 19 confirmed / 2 deaths in Uganda · AfCDC cumulative suspected >1,100\n\nThe current outbreak is already 6× larger by case count than the 2007 Bundibugyo outbreak — and 15× larger than 2012. CFR is too early to calculate cleanly because most cases are recent and unresolved.\n\nThe Equatorial rainforest belt of north-eastern DRC sits at the intersection of three drivers — wildlife reservoirs (fruit bats), high human-bushmeat contact, and weak rural health infrastructure — which makes recurrence near-inevitable. What is different this time: the Bundibugyo strain (rare and under-studied), the speed of cross-border spread to Uganda, and the conflict overlay (active M23 and ADF operations in Nord-Kivu / Ituri) which has historically taken 6–12 months off response timelines.",
       sources: [{
         label: "CNN: DRC's repeat outbreaks",
         url: "https://www.cnn.com/2026/05/26/health/ebola-outbreak-vaccines-treatments"
@@ -1802,6 +1845,30 @@ const data = {
       }
     },
     security_incidents: [{
+      label: "Security · health workers threatened and assaulted; first export to Europe",
+      severity: "high",
+      date: "24 Jun",
+      body: "As the DRC outbreak crossed 1,000 cases (now the second-largest on record), Al Jazeera reporting from Bunia described a continuing security crisis around the response: some health workers have been threatened, others beaten, and several infected. WHO's Director-General said the outbreak continues to outpace the response, with inadequate contact tracing and insufficient treatment capacity; Africa CDC warned it could become the worst Ebola outbreak ever, noting around one million people live in displacement camps with minimal services. On 24 June, France confirmed its first imported case (a humanitarian doctor returning from DRC), underscoring the export risk from a response operating in contested, conflict-affected terrain.\n\nOperational read: violence against responders and degraded access remain the binding constraints on containment. Assume contested access in Ituri and North Kivu, protect frontline staff, and plan for continued export risk along travel corridors.",
+      sources: [{
+        label: "Al Jazeera (France case + Bunia reporting)",
+        url: "https://www.aljazeera.com/news/2026/6/24/france-confirms-first-ebola-case-in-doctor-returning-from-dr-congo"
+      }, {
+        label: "WHO DON608",
+        url: "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON608"
+      }]
+    }, {
+      label: "Access · response gaps widen as North Kivu cases double",
+      severity: "high",
+      date: "17 Jun",
+      body: "The outbreak is still outrunning the response. Confirmed cases reached 837 with 196 deaths (data to 15 June); North Kivu confirmed cases doubled in a week to 67 across 10 health zones, extending the outbreak deeper into territory contested by armed groups (ADF, CODECO and the Rwanda-backed M23). WHO reports contact tracing running at only about 45% — well below the ~90% needed to get ahead of transmission — and continues to describe major surveillance 'blind spots', with the true caseload assessed to be materially higher than confirmed figures.\n\nOperational read: insecurity and access denial are now the binding constraints on containment, not clinical capacity alone. Field movement in North Kivu and Ituri should assume contested access, degraded surveillance and the possibility of undetected transmission along mining and displacement corridors.",
+      sources: [{
+        label: "ECDC outbreak page",
+        url: "https://www.ecdc.europa.eu/en/ebola-outbreak-democratic-republic-congo-and-uganda"
+      }, {
+        label: "WHO DON607",
+        url: "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON607"
+      }]
+    }, {
       label: "Displacement camp · Ebola reaches Kpangba/Kpanga IDP site (Ituri)",
       severity: "high",
       date: "11 Jun +",
